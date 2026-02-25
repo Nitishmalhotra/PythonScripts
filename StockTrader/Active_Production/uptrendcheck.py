@@ -186,7 +186,14 @@ def run_screener(max_stocks: int = None, delay: float = 0.3):
         ).reset_index(drop=True)
         df_result.index += 1  # 1-based index
 
-        print(df_result.to_string())
+        # Rename columns to avoid Unicode rupee symbol
+        df_result.columns = [col.replace(" (₹)", " (INR)") for col in df_result.columns]
+        
+        try:
+            print(df_result.to_string())
+        except UnicodeEncodeError:
+            # Fallback: print as CSV if Unicode fails
+            print(df_result.to_csv(index_label="Rank"))
 
         # Save to CSV
         ts = datetime.now().strftime("%Y%m%d_%H%M%S")
