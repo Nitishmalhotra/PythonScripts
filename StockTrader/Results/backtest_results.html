@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Backtest Results — February 23, 2026</title>
+<style>
+  body  { font-family:'Segoe UI',sans-serif; background:#f0f4f8; color:#333; padding:20px; }
+  .wrap { max-width:1400px; margin:0 auto; background:#fff; border-radius:12px;
+           box-shadow:0 4px 20px rgba(0,0,0,.15); overflow:hidden; }
+  .hdr  { background:linear-gradient(135deg,#1e3c72,#2a5298); color:#fff;
+           padding:35px 40px; text-align:center; }
+  .hdr h1 { margin:0 0 8px; font-size:2em; }
+  .hdr p  { margin:0; opacity:.85; }
+  .body { padding:40px; }
+  .alert { background:#fff3cd; border-left:5px solid #ffc107; padding:14px 18px;
+            border-radius:6px; margin-bottom:24px; }
+  table { width:100%; border-collapse:collapse; }
+  th    { background:linear-gradient(135deg,#667eea,#764ba2); color:#fff;
+           padding:12px 14px; text-align:left; font-size:.85em; letter-spacing:.4px; }
+  td    { padding:11px 14px; border-bottom:1px solid #e8e8e8; font-size:.9em; }
+  tr:hover { background:#f7f8ff; }
+  .footer { text-align:center; padding:24px; color:#888; font-size:.85em;
+             border-top:2px solid #eee; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hdr">
+    <h1>📊 Strategy Backtest Results</h1>
+    <p>Walk-Forward Out-of-Sample Test &nbsp;|&nbsp; Generated February 23, 2026 at 12:04 PM</p>
+  </div>
+  <div class="body">
+    <div class="alert">
+      <strong>Methodology:</strong> Each strategy is tested on the last 30 % of available
+      history (out-of-sample). Signals on day T are executed at the open of day T+1.
+      Stop-loss = 1.5× ATR below entry; Target-1 = 2.5× ATR; Target-2 = 3.5× ATR.
+      After T1 hit, 50 % of position is closed and stop trails to breakeven.
+      Max hold = 20 trading days.
+    </div>
+    <div style="overflow-x:auto">
+    <table>
+      <thead>
+        <tr>
+          <th>Strategy</th><th>Trades</th><th>Win Rate</th>
+          <th>Avg Win %</th><th>Avg Loss %</th><th>Total P&amp;L (₹)</th>
+          <th>Max DD (₹)</th><th>Profit Factor</th><th>Sharpe</th>
+          <th>Avg Hold Days</th><th>Stop Exits</th><th>T2 Exits</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Momentum Breakout</strong></td>
+          <td>1405</td>
+          <td style="color:#dc3545">21.7%</td>
+          <td>8.08%</td>
+          <td>-6.48%</td>
+          <td>₹-1,178,193</td>
+          <td>₹-1,176,426</td>
+          <td style="color:#ffc107">0.34</td>
+          <td>-7.04</td>
+          <td>8.6</td>
+          <td>875</td>
+          <td>99</td>
+        </tr>
+
+        <tr>
+          <td><strong>Mean Reversion</strong></td>
+          <td>107</td>
+          <td style="color:#dc3545">23.4%</td>
+          <td>4.21%</td>
+          <td>-3.21%</td>
+          <td>₹-86,236</td>
+          <td>₹-86,985</td>
+          <td style="color:#ffc107">0.41</td>
+          <td>-5.98</td>
+          <td>4.9</td>
+          <td>76</td>
+          <td>10</td>
+        </tr>
+
+        <tr>
+          <td><strong>Trend Following</strong></td>
+          <td>2244</td>
+          <td style="color:#dc3545">29.0%</td>
+          <td>7.69%</td>
+          <td>-7.29%</td>
+          <td>₹-1,281,161</td>
+          <td>₹-1,279,654</td>
+          <td style="color:#ffc107">0.43</td>
+          <td>-5.22</td>
+          <td>15.6</td>
+          <td>981</td>
+          <td>126</td>
+        </tr>
+
+        <tr>
+          <td><strong>Volume Breakout</strong></td>
+          <td>2064</td>
+          <td style="color:#dc3545">23.5%</td>
+          <td>7.07%</td>
+          <td>-6.38%</td>
+          <td>₹-1,596,493</td>
+          <td>₹-1,595,910</td>
+          <td style="color:#ffc107">0.33</td>
+          <td>-7.06</td>
+          <td>8.1</td>
+          <td>1075</td>
+          <td>130</td>
+        </tr>
+
+        <tr>
+          <td><strong>Swing Trading</strong></td>
+          <td>510</td>
+          <td style="color:#dc3545">30.0%</td>
+          <td>6.92%</td>
+          <td>-5.97%</td>
+          <td>₹-294,604</td>
+          <td>₹-297,436</td>
+          <td style="color:#ffc107">0.48</td>
+          <td>-4.48</td>
+          <td>10.8</td>
+          <td>269</td>
+          <td>36</td>
+        </tr>
+
+        <tr>
+          <td><strong>Gap Up</strong></td>
+          <td>1060</td>
+          <td style="color:#dc3545">26.5%</td>
+          <td>7.29%</td>
+          <td>-4.96%</td>
+          <td>₹-580,833</td>
+          <td>₹-584,750</td>
+          <td style="color:#ffc107">0.54</td>
+          <td>-4.23</td>
+          <td>4.9</td>
+          <td>671</td>
+          <td>127</td>
+        </tr>
+
+        <tr>
+          <td><strong>RSI Setup</strong></td>
+          <td>1705</td>
+          <td style="color:#dc3545">31.1%</td>
+          <td>7.49%</td>
+          <td>-5.07%</td>
+          <td>₹-630,684</td>
+          <td>₹-631,770</td>
+          <td style="color:#ffc107">0.67</td>
+          <td>-2.66</td>
+          <td>6.8</td>
+          <td>960</td>
+          <td>255</td>
+        </tr>
+
+        <tr>
+          <td><strong>Strong Linearity</strong></td>
+          <td>1564</td>
+          <td style="color:#dc3545">24.5%</td>
+          <td>6.23%</td>
+          <td>-5.65%</td>
+          <td>₹-1,133,821</td>
+          <td>₹-1,137,852</td>
+          <td style="color:#ffc107">0.39</td>
+          <td>-6.69</td>
+          <td>8.2</td>
+          <td>879</td>
+          <td>102</td>
+        </tr>
+
+        <tr>
+          <td><strong>VCP Pattern</strong></td>
+          <td>503</td>
+          <td style="color:#dc3545">18.5%</td>
+          <td>7.19%</td>
+          <td>-4.21%</td>
+          <td>₹-428,520</td>
+          <td>₹-426,520</td>
+          <td style="color:#ffc107">0.37</td>
+          <td>-6.06</td>
+          <td>6.9</td>
+          <td>374</td>
+          <td>47</td>
+        </tr>
+
+        <tr>
+          <td><strong>Pyramiding</strong></td>
+          <td>372</td>
+          <td style="color:#dc3545">24.2%</td>
+          <td>7.62%</td>
+          <td>-5.25%</td>
+          <td>₹-249,712</td>
+          <td>₹-248,056</td>
+          <td style="color:#ffc107">0.50</td>
+          <td>-5.21</td>
+          <td>6.5</td>
+          <td>253</td>
+          <td>52</td>
+        </tr>
+
+        <tr>
+          <td><strong>Golden Crossover</strong></td>
+          <td>40</td>
+          <td style="color:#dc3545">32.5%</td>
+          <td>3.54%</td>
+          <td>-4.53%</td>
+          <td>₹-11,043</td>
+          <td>₹-12,820</td>
+          <td style="color:#ffc107">0.39</td>
+          <td>-5.98</td>
+          <td>5.6</td>
+          <td>1</td>
+          <td>0</td>
+        </tr></tbody>
+    </table>
+    </div>
+  </div>
+  <div class="footer">Backtest is for informational purposes only. Past performance ≠ future results.</div>
+</div>
+</body>
+</html>

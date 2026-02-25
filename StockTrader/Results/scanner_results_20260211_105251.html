@@ -1,0 +1,1920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Stock Scanner Results - February 11, 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2a5298 0%, #20c997 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #28a745 0%, #333 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 5px solid #1e3c72;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .header .timestamp {
+            margin-top: 15px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            border-left: 4px solid #dc3545;
+            padding-left: 20px;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .icon {
+            font-size: 1.2em;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .card-header {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .signal-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+        
+        .signal-strong-buy {
+            background: #28a745;
+            color: white;
+        }
+        
+        .signal-buy {
+            background: #20c997;
+            color: white;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .strategy-badge {
+            display: inline-block;
+            background: #e7e9fc;
+            color: #1e3c72;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+        
+        .action-buy {
+            background: #28a745;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+        
+        .action-sell {
+            background: #dc3545;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+        
+        .action-hold {
+            background: #ffc107;
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+        
+        .action-conflict {
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85em;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        .multi-strategy {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+        }
+        
+        .alert {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .alert-danger {
+            background: #f8d7da;
+            border-left-color: #dc3545;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            text-align: center;
+            padding: 30px;
+            border-top: 3px solid #667eea;
+            color: #6c757d;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin: 10px 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #28a745 0%, #dc3545 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .tabs {
+            display: ;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 1em;
+            font-weight: 600;
+            color: #6c757d;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        .tab:hover {
+            color: #1e3c72;
+        }
+        
+        .tab.active {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .btn {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+    <script>
+        function switchTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Advanced Stock Scanner Results</h1>
+            <div class="subtitle">Multi-Strategy Trading Signals & Analysis</div>
+            <div class="timestamp">Generated: February 11, 2026 at 10:52 AM</div>
+        </div>
+        
+        <div class="content">
+            <!-- Summary Statistics -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="icon">📈</span>
+                    <span>Scanner Performance Summary</span>
+                </div>
+                
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <div class="stat-label">Total Strategies</div>
+                        <div class="stat-value">9</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Unique Stocks</div>
+                        <div class="stat-value">47</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Total Signals</div>
+                        <div class="stat-value">47</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stock-Centric View -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="icon">💼</span>
+                    <span>All Unique Stocks by Latest Signal Strategy</span>
+                </div>
+                
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('all-stocks')">All Stocks</button>
+                    <button class="tab" onclick="switchTab('swing-trading')">Swing Trading (15)</button>
+                    <button class="tab" onclick="switchTab('sell-below-10ma')">Sell Below 10MA (9)</button>
+                    <button class="tab" onclick="switchTab('trend-following')">Trend Following (8)</button>
+                    <button class="tab" onclick="switchTab('stage-2-uptrend')">Stage 2 Uptrend (4)</button>
+                    <button class="tab" onclick="switchTab('strong-linearity')">Strong Linearity (1)</button>
+                    <button class="tab" onclick="switchTab('rsi-setup')">RSI Setup (1)</button>
+                    <button class="tab" onclick="switchTab('momentum-breakout')">Momentum Breakout (3)</button>
+                    <button class="tab" onclick="switchTab('pyramiding')">Pyramiding (2)</button>
+                    <button class="tab" onclick="switchTab('mean-reversion')">Mean Reversion (4)</button>
+                </div>
+                
+                <!-- All Stocks Tab -->
+                <div id="all-stocks" class="tab-content active">
+                    <div class="card">
+                        <div class="card-header">All Matched Stocks (Latest Signal Date Only) <span class="signal-badge signal-strong-buy">47 Stocks</span></div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Stock</th>
+                                        <th>Action</th>
+                                        <th>Price (₹)</th>
+                                        <th>Signal Date</th>
+                                        <th>RSI</th>
+                                        <th>Vol Ratio</th>
+                                        <th>Stop Loss (₹)</th>
+                                        <th>Target (₹)</th>
+                                        <th>R:R</th>
+                                        <th>Strategies</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>AXISBANK</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹1356.20</td>
+                                        <td>2026-02-03</td>
+                                        <td>63.85</td>
+                                        <td>1.21</td>
+                                        <td>₹1285.38</td>
+                                        <td>₹1474.24</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Trend Following</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>BAJAJ-AUTO</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹9661.00</td>
+                                        <td>2026-01-06</td>
+                                        <td>72.23</td>
+                                        <td>1.54</td>
+                                        <td>₹9382.59</td>
+                                        <td>₹10217.82</td>
+                                        <td>2.00</td>
+                                        <td>
+                                            <span class="strategy-badge">Stage 2 Uptrend</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>BAJAJFINSV</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹2024.20</td>
+                                        <td>2026-02-06</td>
+                                        <td>50.80</td>
+                                        <td>0.97</td>
+                                        <td>₹1948.73</td>
+                                        <td>₹2149.99</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Strong Linearity</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>BPCL</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹386.35</td>
+                                        <td>2026-02-06</td>
+                                        <td>72.43</td>
+                                        <td>0.99</td>
+                                        <td>₹368.59</td>
+                                        <td>₹415.95</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Stage 2 Uptrend</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>CIPLA</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹1342.50</td>
+                                        <td>2026-02-09</td>
+                                        <td>38.24</td>
+                                        <td>0.84</td>
+                                        <td>₹1293.22</td>
+                                        <td>₹1408.20</td>
+                                        <td>1.33</td>
+                                        <td>
+                                            <span class="strategy-badge">RSI Setup</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>COALINDIA</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹455.75</td>
+                                        <td>2026-01-29</td>
+                                        <td>61.65</td>
+                                        <td>1.57</td>
+                                        <td>₹437.03</td>
+                                        <td>₹486.95</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Momentum Breakout</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>EICHERMOT</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹7769.00</td>
+                                        <td>2026-02-11</td>
+                                        <td>70.52</td>
+                                        <td>2.69</td>
+                                        <td>₹7432.04</td>
+                                        <td>₹8442.93</td>
+                                        <td>2.00</td>
+                                        <td>
+                                            <span class="strategy-badge">Momentum Breakout</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>GRASIM</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹2926.30</td>
+                                        <td>2026-02-09</td>
+                                        <td>68.95</td>
+                                        <td>0.95</td>
+                                        <td>₹2825.59</td>
+                                        <td>₹3094.16</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Stage 2 Uptrend</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>HEROMOTOCO</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹5753.50</td>
+                                        <td>2026-02-10</td>
+                                        <td>62.09</td>
+                                        <td>1.68</td>
+                                        <td>₹5503.96</td>
+                                        <td>₹6169.39</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Pyramiding</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>HINDUNILVR</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹2424.20</td>
+                                        <td>2026-02-06</td>
+                                        <td>51.75</td>
+                                        <td>0.98</td>
+                                        <td>₹2337.98</td>
+                                        <td>₹2567.90</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Trend Following</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>ICICIBANK</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹1406.50</td>
+                                        <td>2026-02-10</td>
+                                        <td>63.63</td>
+                                        <td>1.05</td>
+                                        <td>₹1364.48</td>
+                                        <td>₹1476.54</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Trend Following</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>JSWSTEEL</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹1229.40</td>
+                                        <td>2026-02-03</td>
+                                        <td>60.99</td>
+                                        <td>1.13</td>
+                                        <td>₹1181.04</td>
+                                        <td>₹1310.01</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Trend Following</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>M&M</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹3573.70</td>
+                                        <td>2026-01-22</td>
+                                        <td>22.27</td>
+                                        <td>1.39</td>
+                                        <td>₹3453.75</td>
+                                        <td>₹3733.63</td>
+                                        <td>1.33</td>
+                                        <td>
+                                            <span class="strategy-badge">Mean Reversion</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>MARUTI</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹14599.00</td>
+                                        <td>2026-01-30</td>
+                                        <td>16.20</td>
+                                        <td>2.09</td>
+                                        <td>₹13975.11</td>
+                                        <td>₹15430.86</td>
+                                        <td>1.33</td>
+                                        <td>
+                                            <span class="strategy-badge">Mean Reversion</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>NESTLEIND</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹1308.00</td>
+                                        <td>2026-02-03</td>
+                                        <td>47.71</td>
+                                        <td>0.99</td>
+                                        <td>₹1256.27</td>
+                                        <td>₹1394.21</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Trend Following</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>NTPC</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹367.00</td>
+                                        <td>2026-02-05</td>
+                                        <td>63.81</td>
+                                        <td>1.50</td>
+                                        <td>₹351.24</td>
+                                        <td>₹393.27</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Trend Following</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>ONGC</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹266.95</td>
+                                        <td>2026-02-04</td>
+                                        <td>62.11</td>
+                                        <td>1.36</td>
+                                        <td>₹252.83</td>
+                                        <td>₹290.48</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Trend Following</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>POWERGRID</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹289.40</td>
+                                        <td>2026-02-04</td>
+                                        <td>72.55</td>
+                                        <td>1.51</td>
+                                        <td>₹277.32</td>
+                                        <td>₹313.55</td>
+                                        <td>2.00</td>
+                                        <td>
+                                            <span class="strategy-badge">Momentum Breakout</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>SBILIFE</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹2002.10</td>
+                                        <td>2026-02-03</td>
+                                        <td>35.58</td>
+                                        <td>1.61</td>
+                                        <td>₹1924.29</td>
+                                        <td>₹2105.84</td>
+                                        <td>1.33</td>
+                                        <td>
+                                            <span class="strategy-badge">Mean Reversion</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>SBIN</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹1144.10</td>
+                                        <td>2026-02-10</td>
+                                        <td>69.97</td>
+                                        <td>1.38</td>
+                                        <td>₹1091.72</td>
+                                        <td>₹1231.40</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Pyramiding</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>TATACONSUM</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹1133.90</td>
+                                        <td>2026-01-30</td>
+                                        <td>38.89</td>
+                                        <td>1.71</td>
+                                        <td>₹1083.09</td>
+                                        <td>₹1201.64</td>
+                                        <td>1.33</td>
+                                        <td>
+                                            <span class="strategy-badge">Mean Reversion</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>TITAN</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹4288.40</td>
+                                        <td>2026-02-11</td>
+                                        <td>72.83</td>
+                                        <td>1.58</td>
+                                        <td>₹4115.31</td>
+                                        <td>₹4634.58</td>
+                                        <td>2.00</td>
+                                        <td>
+                                            <span class="strategy-badge">Stage 2 Uptrend</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>ULTRACEMCO</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹12590.00</td>
+                                        <td>2026-02-03</td>
+                                        <td>62.70</td>
+                                        <td>0.91</td>
+                                        <td>₹12072.71</td>
+                                        <td>₹13452.14</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Trend Following</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>ASIANPAINT</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹2813.90</td>
+                                        <td>2026-01-14</td>
+                                        <td>53.09</td>
+                                        <td>0.83</td>
+                                        <td>₹2732.36</td>
+                                        <td>₹2949.79</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Sell Below 10MA</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>BRITANNIA</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹6033.50</td>
+                                        <td>2026-01-08</td>
+                                        <td>49.41</td>
+                                        <td>2.65</td>
+                                        <td>₹5873.75</td>
+                                        <td>₹6299.75</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Sell Below 10MA</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>DIVISLAB</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹6024.50</td>
+                                        <td>2026-02-06</td>
+                                        <td>45.58</td>
+                                        <td>1.16</td>
+                                        <td>₹5751.45</td>
+                                        <td>₹6479.59</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Sell Below 10MA</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>HDFCBANK</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹932.40</td>
+                                        <td>2026-02-10</td>
+                                        <td>56.79</td>
+                                        <td>0.97</td>
+                                        <td>₹903.58</td>
+                                        <td>₹980.44</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Sell Below 10MA</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>HINDALCO</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹908.20</td>
+                                        <td>2026-02-01</td>
+                                        <td>51.19</td>
+                                        <td>1.18</td>
+                                        <td>₹857.21</td>
+                                        <td>₹993.19</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Sell Below 10MA</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>INFY</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹1641.00</td>
+                                        <td>2026-01-30</td>
+                                        <td>56.34</td>
+                                        <td>1.35</td>
+                                        <td>₹1592.94</td>
+                                        <td>₹1721.11</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Sell Below 10MA</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>SHREECEM</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹26525.00</td>
+                                        <td>2026-02-10</td>
+                                        <td>39.61</td>
+                                        <td>1.21</td>
+                                        <td>₹25584.82</td>
+                                        <td>₹27778.57</td>
+                                        <td>1.33</td>
+                                        <td>
+                                            <span class="strategy-badge">Sell Below 10MA</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>TCS</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹2999.10</td>
+                                        <td>2026-02-04</td>
+                                        <td>35.43</td>
+                                        <td>3.04</td>
+                                        <td>₹2874.69</td>
+                                        <td>₹3164.99</td>
+                                        <td>1.33</td>
+                                        <td>
+                                            <span class="strategy-badge">Sell Below 10MA</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>WIPRO</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹233.34</td>
+                                        <td>2026-02-04</td>
+                                        <td>33.88</td>
+                                        <td>1.70</td>
+                                        <td>₹220.09</td>
+                                        <td>₹251.00</td>
+                                        <td>1.33</td>
+                                        <td>
+                                            <span class="strategy-badge">Sell Below 10MA</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>ADANIENT</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹2228.20</td>
+                                        <td>2026-02-04</td>
+                                        <td>54.05</td>
+                                        <td>1.02</td>
+                                        <td>₹2090.37</td>
+                                        <td>₹2457.91</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>ADANIPORTS</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹1550.70</td>
+                                        <td>2026-02-06</td>
+                                        <td>61.93</td>
+                                        <td>1.37</td>
+                                        <td>₹1455.18</td>
+                                        <td>₹1709.90</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>APOLLOHOSP</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹7152.50</td>
+                                        <td>2026-02-06</td>
+                                        <td>51.06</td>
+                                        <td>1.57</td>
+                                        <td>₹6917.54</td>
+                                        <td>₹7544.11</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>BAJFINANCE</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹963.30</td>
+                                        <td>2026-02-04</td>
+                                        <td>54.05</td>
+                                        <td>2.10</td>
+                                        <td>₹919.68</td>
+                                        <td>₹1036.00</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>BHARTIARTL</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹2011.30</td>
+                                        <td>2026-02-10</td>
+                                        <td>52.87</td>
+                                        <td>1.27</td>
+                                        <td>₹1941.10</td>
+                                        <td>₹2128.30</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>DRREDDY</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹1275.50</td>
+                                        <td>2026-02-09</td>
+                                        <td>69.72</td>
+                                        <td>1.05</td>
+                                        <td>₹1219.81</td>
+                                        <td>₹1368.32</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>HCLTECH</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹1695.60</td>
+                                        <td>2026-01-30</td>
+                                        <td>62.82</td>
+                                        <td>1.60</td>
+                                        <td>₹1643.24</td>
+                                        <td>₹1782.87</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>INDUSINDBK</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹905.15</td>
+                                        <td>2026-01-20</td>
+                                        <td>63.83</td>
+                                        <td>1.46</td>
+                                        <td>₹863.32</td>
+                                        <td>₹974.87</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>ITC</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹325.80</td>
+                                        <td>2026-02-06</td>
+                                        <td>49.58</td>
+                                        <td>2.55</td>
+                                        <td>₹312.51</td>
+                                        <td>₹347.94</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>KOTAKBANK</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹428.80</td>
+                                        <td>2026-02-09</td>
+                                        <td>53.65</td>
+                                        <td>1.17</td>
+                                        <td>₹412.26</td>
+                                        <td>₹456.37</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>LT</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹4038.80</td>
+                                        <td>2026-02-03</td>
+                                        <td>59.99</td>
+                                        <td>1.61</td>
+                                        <td>₹3883.21</td>
+                                        <td>₹4298.12</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>RELIANCE</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹1437.10</td>
+                                        <td>2026-02-03</td>
+                                        <td>47.10</td>
+                                        <td>1.65</td>
+                                        <td>₹1378.54</td>
+                                        <td>₹1534.71</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>SUNPHARMA</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹1702.10</td>
+                                        <td>2026-02-03</td>
+                                        <td>45.87</td>
+                                        <td>2.64</td>
+                                        <td>₹1627.38</td>
+                                        <td>₹1826.64</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>TECHM</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹1716.50</td>
+                                        <td>2026-02-03</td>
+                                        <td>64.48</td>
+                                        <td>1.18</td>
+                                        <td>₹1642.20</td>
+                                        <td>₹1840.34</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>UPL</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹758.70</td>
+                                        <td>2026-02-04</td>
+                                        <td>46.13</td>
+                                        <td>1.30</td>
+                                        <td>₹706.79</td>
+                                        <td>₹845.22</td>
+                                        <td>1.67</td>
+                                        <td>
+                                            <span class="strategy-badge">Swing Trading</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Swing Trading Tab -->
+                <div id="swing-trading" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">Swing Trading <span class="signal-badge signal-buy">15 Stocks</span></div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Stock</th>
+                                        <th>Action</th>
+                                        <th>Price (₹)</th>
+                                        <th>Signal Date</th>
+                                        <th>RSI</th>
+                                        <th>Vol Ratio</th>
+                                        <th>Stop Loss (₹)</th>
+                                        <th>Target (₹)</th>
+                                        <th>R:R</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>ADANIENT</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹2228.20</td>
+                                        <td>2026-02-04</td>
+                                        <td>54.05</td>
+                                        <td>1.02</td>
+                                        <td>₹2090.37</td>
+                                        <td>₹2457.91</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>ADANIPORTS</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹1550.70</td>
+                                        <td>2026-02-06</td>
+                                        <td>61.93</td>
+                                        <td>1.37</td>
+                                        <td>₹1455.18</td>
+                                        <td>₹1709.90</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>APOLLOHOSP</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹7152.50</td>
+                                        <td>2026-02-06</td>
+                                        <td>51.06</td>
+                                        <td>1.57</td>
+                                        <td>₹6917.54</td>
+                                        <td>₹7544.11</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>BAJFINANCE</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹963.30</td>
+                                        <td>2026-02-04</td>
+                                        <td>54.05</td>
+                                        <td>2.10</td>
+                                        <td>₹919.68</td>
+                                        <td>₹1036.00</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>BHARTIARTL</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹2011.30</td>
+                                        <td>2026-02-10</td>
+                                        <td>52.87</td>
+                                        <td>1.27</td>
+                                        <td>₹1941.10</td>
+                                        <td>₹2128.30</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>DRREDDY</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹1275.50</td>
+                                        <td>2026-02-09</td>
+                                        <td>69.72</td>
+                                        <td>1.05</td>
+                                        <td>₹1219.81</td>
+                                        <td>₹1368.32</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>HCLTECH</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹1695.60</td>
+                                        <td>2026-01-30</td>
+                                        <td>62.82</td>
+                                        <td>1.60</td>
+                                        <td>₹1643.24</td>
+                                        <td>₹1782.87</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>INDUSINDBK</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹905.15</td>
+                                        <td>2026-01-20</td>
+                                        <td>63.83</td>
+                                        <td>1.46</td>
+                                        <td>₹863.32</td>
+                                        <td>₹974.87</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>ITC</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹325.80</td>
+                                        <td>2026-02-06</td>
+                                        <td>49.58</td>
+                                        <td>2.55</td>
+                                        <td>₹312.51</td>
+                                        <td>₹347.94</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>KOTAKBANK</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹428.80</td>
+                                        <td>2026-02-09</td>
+                                        <td>53.65</td>
+                                        <td>1.17</td>
+                                        <td>₹412.26</td>
+                                        <td>₹456.37</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>LT</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹4038.80</td>
+                                        <td>2026-02-03</td>
+                                        <td>59.99</td>
+                                        <td>1.61</td>
+                                        <td>₹3883.21</td>
+                                        <td>₹4298.12</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>RELIANCE</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹1437.10</td>
+                                        <td>2026-02-03</td>
+                                        <td>47.10</td>
+                                        <td>1.65</td>
+                                        <td>₹1378.54</td>
+                                        <td>₹1534.71</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>SUNPHARMA</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹1702.10</td>
+                                        <td>2026-02-03</td>
+                                        <td>45.87</td>
+                                        <td>2.64</td>
+                                        <td>₹1627.38</td>
+                                        <td>₹1826.64</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>TECHM</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹1716.50</td>
+                                        <td>2026-02-03</td>
+                                        <td>64.48</td>
+                                        <td>1.18</td>
+                                        <td>₹1642.20</td>
+                                        <td>₹1840.34</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>UPL</strong></td>
+                                        <td><span class="action-hold">HOLD</span></td>
+                                        <td>₹758.70</td>
+                                        <td>2026-02-04</td>
+                                        <td>46.13</td>
+                                        <td>1.30</td>
+                                        <td>₹706.79</td>
+                                        <td>₹845.22</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sell Below 10MA Tab -->
+                <div id="sell-below-10ma" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">Sell Below 10MA <span class="signal-badge signal-buy">9 Stocks</span></div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Stock</th>
+                                        <th>Action</th>
+                                        <th>Price (₹)</th>
+                                        <th>Signal Date</th>
+                                        <th>RSI</th>
+                                        <th>Vol Ratio</th>
+                                        <th>Stop Loss (₹)</th>
+                                        <th>Target (₹)</th>
+                                        <th>R:R</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>ASIANPAINT</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹2813.90</td>
+                                        <td>2026-01-14</td>
+                                        <td>53.09</td>
+                                        <td>0.83</td>
+                                        <td>₹2732.36</td>
+                                        <td>₹2949.79</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>BRITANNIA</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹6033.50</td>
+                                        <td>2026-01-08</td>
+                                        <td>49.41</td>
+                                        <td>2.65</td>
+                                        <td>₹5873.75</td>
+                                        <td>₹6299.75</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>DIVISLAB</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹6024.50</td>
+                                        <td>2026-02-06</td>
+                                        <td>45.58</td>
+                                        <td>1.16</td>
+                                        <td>₹5751.45</td>
+                                        <td>₹6479.59</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>HDFCBANK</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹932.40</td>
+                                        <td>2026-02-10</td>
+                                        <td>56.79</td>
+                                        <td>0.97</td>
+                                        <td>₹903.58</td>
+                                        <td>₹980.44</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>HINDALCO</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹908.20</td>
+                                        <td>2026-02-01</td>
+                                        <td>51.19</td>
+                                        <td>1.18</td>
+                                        <td>₹857.21</td>
+                                        <td>₹993.19</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>INFY</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹1641.00</td>
+                                        <td>2026-01-30</td>
+                                        <td>56.34</td>
+                                        <td>1.35</td>
+                                        <td>₹1592.94</td>
+                                        <td>₹1721.11</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>SHREECEM</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹26525.00</td>
+                                        <td>2026-02-10</td>
+                                        <td>39.61</td>
+                                        <td>1.21</td>
+                                        <td>₹25584.82</td>
+                                        <td>₹27778.57</td>
+                                        <td>1.33</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>TCS</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹2999.10</td>
+                                        <td>2026-02-04</td>
+                                        <td>35.43</td>
+                                        <td>3.04</td>
+                                        <td>₹2874.69</td>
+                                        <td>₹3164.99</td>
+                                        <td>1.33</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>WIPRO</strong></td>
+                                        <td><span class="action-sell">SELL</span></td>
+                                        <td>₹233.34</td>
+                                        <td>2026-02-04</td>
+                                        <td>33.88</td>
+                                        <td>1.70</td>
+                                        <td>₹220.09</td>
+                                        <td>₹251.00</td>
+                                        <td>1.33</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trend Following Tab -->
+                <div id="trend-following" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">Trend Following <span class="signal-badge signal-buy">8 Stocks</span></div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Stock</th>
+                                        <th>Action</th>
+                                        <th>Price (₹)</th>
+                                        <th>Signal Date</th>
+                                        <th>RSI</th>
+                                        <th>Vol Ratio</th>
+                                        <th>Stop Loss (₹)</th>
+                                        <th>Target (₹)</th>
+                                        <th>R:R</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>AXISBANK</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹1356.20</td>
+                                        <td>2026-02-03</td>
+                                        <td>63.85</td>
+                                        <td>1.21</td>
+                                        <td>₹1285.38</td>
+                                        <td>₹1474.24</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>HINDUNILVR</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹2424.20</td>
+                                        <td>2026-02-06</td>
+                                        <td>51.75</td>
+                                        <td>0.98</td>
+                                        <td>₹2337.98</td>
+                                        <td>₹2567.90</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>ICICIBANK</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹1406.50</td>
+                                        <td>2026-02-10</td>
+                                        <td>63.63</td>
+                                        <td>1.05</td>
+                                        <td>₹1364.48</td>
+                                        <td>₹1476.54</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>JSWSTEEL</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹1229.40</td>
+                                        <td>2026-02-03</td>
+                                        <td>60.99</td>
+                                        <td>1.13</td>
+                                        <td>₹1181.04</td>
+                                        <td>₹1310.01</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>NESTLEIND</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹1308.00</td>
+                                        <td>2026-02-03</td>
+                                        <td>47.71</td>
+                                        <td>0.99</td>
+                                        <td>₹1256.27</td>
+                                        <td>₹1394.21</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>NTPC</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹367.00</td>
+                                        <td>2026-02-05</td>
+                                        <td>63.81</td>
+                                        <td>1.50</td>
+                                        <td>₹351.24</td>
+                                        <td>₹393.27</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>ONGC</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹266.95</td>
+                                        <td>2026-02-04</td>
+                                        <td>62.11</td>
+                                        <td>1.36</td>
+                                        <td>₹252.83</td>
+                                        <td>₹290.48</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>ULTRACEMCO</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹12590.00</td>
+                                        <td>2026-02-03</td>
+                                        <td>62.70</td>
+                                        <td>0.91</td>
+                                        <td>₹12072.71</td>
+                                        <td>₹13452.14</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stage 2 Uptrend Tab -->
+                <div id="stage-2-uptrend" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">Stage 2 Uptrend <span class="signal-badge signal-buy">4 Stocks</span></div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Stock</th>
+                                        <th>Action</th>
+                                        <th>Price (₹)</th>
+                                        <th>Signal Date</th>
+                                        <th>RSI</th>
+                                        <th>Vol Ratio</th>
+                                        <th>Stop Loss (₹)</th>
+                                        <th>Target (₹)</th>
+                                        <th>R:R</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>BAJAJ-AUTO</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹9661.00</td>
+                                        <td>2026-01-06</td>
+                                        <td>72.23</td>
+                                        <td>1.54</td>
+                                        <td>₹9382.59</td>
+                                        <td>₹10217.82</td>
+                                        <td>2.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>BPCL</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹386.35</td>
+                                        <td>2026-02-06</td>
+                                        <td>72.43</td>
+                                        <td>0.99</td>
+                                        <td>₹368.59</td>
+                                        <td>₹415.95</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>GRASIM</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹2926.30</td>
+                                        <td>2026-02-09</td>
+                                        <td>68.95</td>
+                                        <td>0.95</td>
+                                        <td>₹2825.59</td>
+                                        <td>₹3094.16</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>TITAN</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹4288.40</td>
+                                        <td>2026-02-11</td>
+                                        <td>72.83</td>
+                                        <td>1.58</td>
+                                        <td>₹4115.31</td>
+                                        <td>₹4634.58</td>
+                                        <td>2.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Strong Linearity Tab -->
+                <div id="strong-linearity" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">Strong Linearity <span class="signal-badge signal-buy">1 Stocks</span></div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Stock</th>
+                                        <th>Action</th>
+                                        <th>Price (₹)</th>
+                                        <th>Signal Date</th>
+                                        <th>RSI</th>
+                                        <th>Vol Ratio</th>
+                                        <th>Stop Loss (₹)</th>
+                                        <th>Target (₹)</th>
+                                        <th>R:R</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>BAJAJFINSV</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹2024.20</td>
+                                        <td>2026-02-06</td>
+                                        <td>50.80</td>
+                                        <td>0.97</td>
+                                        <td>₹1948.73</td>
+                                        <td>₹2149.99</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- RSI Setup Tab -->
+                <div id="rsi-setup" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">RSI Setup <span class="signal-badge signal-buy">1 Stocks</span></div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Stock</th>
+                                        <th>Action</th>
+                                        <th>Price (₹)</th>
+                                        <th>Signal Date</th>
+                                        <th>RSI</th>
+                                        <th>Vol Ratio</th>
+                                        <th>Stop Loss (₹)</th>
+                                        <th>Target (₹)</th>
+                                        <th>R:R</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>CIPLA</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹1342.50</td>
+                                        <td>2026-02-09</td>
+                                        <td>38.24</td>
+                                        <td>0.84</td>
+                                        <td>₹1293.22</td>
+                                        <td>₹1408.20</td>
+                                        <td>1.33</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Momentum Breakout Tab -->
+                <div id="momentum-breakout" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">Momentum Breakout <span class="signal-badge signal-buy">3 Stocks</span></div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Stock</th>
+                                        <th>Action</th>
+                                        <th>Price (₹)</th>
+                                        <th>Signal Date</th>
+                                        <th>RSI</th>
+                                        <th>Vol Ratio</th>
+                                        <th>Stop Loss (₹)</th>
+                                        <th>Target (₹)</th>
+                                        <th>R:R</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>COALINDIA</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹455.75</td>
+                                        <td>2026-01-29</td>
+                                        <td>61.65</td>
+                                        <td>1.57</td>
+                                        <td>₹437.03</td>
+                                        <td>₹486.95</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>EICHERMOT</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹7769.00</td>
+                                        <td>2026-02-11</td>
+                                        <td>70.52</td>
+                                        <td>2.69</td>
+                                        <td>₹7432.04</td>
+                                        <td>₹8442.93</td>
+                                        <td>2.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>POWERGRID</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹289.40</td>
+                                        <td>2026-02-04</td>
+                                        <td>72.55</td>
+                                        <td>1.51</td>
+                                        <td>₹277.32</td>
+                                        <td>₹313.55</td>
+                                        <td>2.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pyramiding Tab -->
+                <div id="pyramiding" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">Pyramiding <span class="signal-badge signal-buy">2 Stocks</span></div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Stock</th>
+                                        <th>Action</th>
+                                        <th>Price (₹)</th>
+                                        <th>Signal Date</th>
+                                        <th>RSI</th>
+                                        <th>Vol Ratio</th>
+                                        <th>Stop Loss (₹)</th>
+                                        <th>Target (₹)</th>
+                                        <th>R:R</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>HEROMOTOCO</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹5753.50</td>
+                                        <td>2026-02-10</td>
+                                        <td>62.09</td>
+                                        <td>1.68</td>
+                                        <td>₹5503.96</td>
+                                        <td>₹6169.39</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>SBIN</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹1144.10</td>
+                                        <td>2026-02-10</td>
+                                        <td>69.97</td>
+                                        <td>1.38</td>
+                                        <td>₹1091.72</td>
+                                        <td>₹1231.40</td>
+                                        <td>1.67</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mean Reversion Tab -->
+                <div id="mean-reversion" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">Mean Reversion <span class="signal-badge signal-buy">4 Stocks</span></div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Stock</th>
+                                        <th>Action</th>
+                                        <th>Price (₹)</th>
+                                        <th>Signal Date</th>
+                                        <th>RSI</th>
+                                        <th>Vol Ratio</th>
+                                        <th>Stop Loss (₹)</th>
+                                        <th>Target (₹)</th>
+                                        <th>R:R</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>M&M</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹3573.70</td>
+                                        <td>2026-01-22</td>
+                                        <td>22.27</td>
+                                        <td>1.39</td>
+                                        <td>₹3453.75</td>
+                                        <td>₹3733.63</td>
+                                        <td>1.33</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>MARUTI</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹14599.00</td>
+                                        <td>2026-01-30</td>
+                                        <td>16.20</td>
+                                        <td>2.09</td>
+                                        <td>₹13975.11</td>
+                                        <td>₹15430.86</td>
+                                        <td>1.33</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>SBILIFE</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹2002.10</td>
+                                        <td>2026-02-03</td>
+                                        <td>35.58</td>
+                                        <td>1.61</td>
+                                        <td>₹1924.29</td>
+                                        <td>₹2105.84</td>
+                                        <td>1.33</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>TATACONSUM</strong></td>
+                                        <td><span class="action-buy">BUY</span></td>
+                                        <td>₹1133.90</td>
+                                        <td>2026-01-30</td>
+                                        <td>38.89</td>
+                                        <td>1.71</td>
+                                        <td>₹1083.09</td>
+                                        <td>₹1201.64</td>
+                                        <td>1.33</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Action Items -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="icon">⚡</span>
+                    <span>Understanding Your Signals</span>
+                </div>
+                
+                <div class="alert alert-success">
+                    <strong>✅ Stock Allocation:</strong> Each stock appears in <strong>exactly ONE strategy—the one with the latest signal date</strong>. This ensures you see only the most relevant, up-to-date trading setup for each stock.
+                </div>
+                
+                <div class="alert alert-success">
+                    <strong>✅ Action Signals:</strong> <span class="action-buy">BUY</span> = Bullish setup, <span class="action-sell">SELL</span> = Bearish signal, <span class="action-hold">HOLD</span> = Neutral/Watch
+                </div>
+                
+                <div class="alert">
+                    <strong>⏰ Signal Freshness (How Close We Are):</strong><br>
+                    All strategies show only <strong>RECENT signals from last 3-7 days</strong>. Here's what each timeframe means:<br><br>
+                    
+                    <strong>Immediate Action (1-2 days):</strong> Gap Up, Volume Breakout, Sell Below 10MA<br>
+                    <strong>Quick Entry (3-5 days):</strong> Momentum Breakout, Mean Reversion, RSI Setup, Stage 2, VCP<br>
+                    <strong>Swing Setup (5-7 days):</strong> Trend Following, Swing Trading, Pyramiding, Strong Linearity<br>
+                    <strong>Position Building (20 days):</strong> Golden Crossover (rare, high conviction)<br><br>
+                    
+                    <em>The Signal Date column shows when each setup was last triggered.</em>
+                </div>
+                
+                <div class="alert">
+                    <strong>📊 Understanding R:R (Risk:Reward) Ratio:</strong><br><br>
+                    
+                    R:R ratio tells you <strong>how much you can gain vs how much you can lose</strong> on a trade.<br><br>
+                    
+                    <strong>How it's calculated:</strong><br>
+                    • <strong>Risk</strong> = Distance from Current Price to Stop Loss (1.5× ATR below price)<br>
+                    • <strong>Reward</strong> = Distance from Current Price to Target (2-3× ATR above price, varies by momentum)<br>
+                    • <strong>R:R</strong> = Reward ÷ Risk<br><br>
+                    
+                    <strong>What different ratios mean:</strong><br>
+                    • <strong>R:R = 1.0</strong> → Equal risk/reward (₹100 risk for ₹100 gain) - <em>Not ideal</em><br>
+                    • <strong>R:R = 1.5</strong> → ₹100 risk for ₹150 gain - <em>Acceptable for high probability trades</em><br>
+                    • <strong>R:R = 2.0</strong> → ₹100 risk for ₹200 gain - <em>Good trade setup</em> ✓<br>
+                    • <strong>R:R = 2.5+</strong> → ₹100 risk for ₹250+ gain - <em>Excellent setup</em> ✓✓<br><br>
+                    
+                    <strong>Strategy-Based R:R:</strong><br>
+                    • <strong>High Momentum</strong> (RSI > 65, Vol > 1.5×): R:R = 2.0-2.5 (aggressive targets)<br>
+                    • <strong>Strong Momentum</strong> (RSI > 60): R:R = 1.7-2.0 (moderate targets)<br>
+                    • <strong>Mean Reversion</strong> (RSI < 40): R:R = 1.3-1.5 (conservative, quick bounce)<br>
+                    • <strong>Normal Conditions</strong>: R:R = 1.5-1.8<br><br>
+                    
+                    <strong>Trading Tip:</strong> Focus on stocks with R:R ≥ 2.0. Even with 50% win rate, you'll be profitable!<br>
+                    <em>Example: Win 1 trade (gain ₹200), lose 1 trade (lose ₹100) = Net +₹100 profit</em>
+                </div>
+                
+                <div class="alert">
+                    <strong>💡 Risk Management:</strong><br>
+                    • Always use stop losses shown in the table (auto-calculated at 1.5× ATR below entry)<br>
+                    • Position size: Risk only 1-2% of capital per trade<br>
+                    • Prefer high R:R trades (≥ 2.0) to stay profitable with lower win rates<br>
+                    • All prices in Indian Rupees (₹)
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Disclaimer:</strong> This report is for informational purposes only and does not constitute financial advice.</p>
+            <p>Always conduct your own research and consult with a financial advisor before making investment decisions.</p>
+            <p style="margin-top: 15px;">Generated by Advanced Stock Scanner | Powered by Kite Connect API</p>
+            <div style="margin-top: 20px;">
+                <a href="#" onclick="window.print();" class="btn">🖨️ Print Report</a>
+                <a href="strategies_{timestamp}.csv" class="btn" download>📥 Download CSV</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

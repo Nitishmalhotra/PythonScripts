@@ -1,0 +1,36 @@
+Ticker,Name,Price,Score,Signal,Strength,RSI,MACD,ADX,Stoch,Vol_Ratio,Rel_Str,Volatility,Sharpe,MaxDD,1M,3M,6M,AUM,Expense,Yield,Beta
+EWK,iShares MSCI Belgium ETF,$27.34,95,STRONG BUY,5,78.7,Bear,52.2,82.4,2.21x,+14.2%,11.5%,3.14,-4.2%,+8.1%,+13.4%,+20.3%,$0.03B,N/A,1.61%,N/A
+EWC,iShares MSCI Canada ETF,$56.17,85,STRONG BUY,5,56.6,Bull,21.9,64.2,0.87x,+13.4%,14.5%,2.42,-4.2%,+1.7%,+11.9%,+19.9%,$4.02B,N/A,1.44%,N/A
+EWY,iShares MSCI South Korea ETF,$133.97,85,STRONG BUY,5,75.8,Bear,49.2,97.8,1.36x,+79.6%,29.4%,4.30,-12.2%,+20.6%,+45.6%,+86.6%,$12.20B,N/A,1.64%,N/A
+GREK,Global X MSCI Greece ETF,$71.90,80,STRONG BUY,5,47.4,Bear,37.8,2.9,2.58x,+4.0%,18.0%,1.07,-7.1%,+2.9%,+13.5%,+9.8%,$0.34B,N/A,3.09%,N/A
+EEM,iShares MSCI Emerging Markets ,$61.12,80,STRONG BUY,5,65.3,Bear,34.8,78.6,0.90x,+18.0%,15.0%,2.84,-5.2%,+5.2%,+12.9%,+24.1%,$26.95B,N/A,2.05%,N/A
+EWH,iShares MSCI Hong Kong ETF,$23.15,80,STRONG BUY,5,52.7,Bear,35.8,11.4,0.97x,+5.4%,16.2%,1.33,-6.5%,+1.5%,+4.4%,+12.8%,$0.72B,N/A,4.71%,N/A
+EWZ,iShares MSCI Brazil ETF,$38.06,75,STRONG BUY,5,62.2,Bear,40.5,49.6,1.06x,+34.9%,23.4%,2.99,-8.1%,+14.1%,+19.4%,+39.7%,$8.75B,N/A,4.45%,N/A
+EWA,iShares MSCI Australia ETF,$29.16,75,STRONG BUY,5,67.8,Bear,42.2,78.9,1.04x,+4.6%,14.5%,1.37,-9.5%,+9.4%,+14.3%,+10.5%,$1.28B,N/A,3.04%,N/A
+EWD,iShares MSCI Sweden ETF,$53.47,75,STRONG BUY,5,58.1,Bear,30.3,56.6,0.57x,+11.2%,15.4%,2.04,-7.8%,+4.7%,+12.1%,+16.1%,$0.33B,N/A,3.08%,N/A
+EWW,iShares MSCI Mexico ETF,$81.03,75,STRONG BUY,5,68.0,Bear,43.8,90.9,0.56x,+29.1%,19.4%,3.12,-5.6%,+10.6%,+22.6%,+34.6%,$2.11B,N/A,3.21%,N/A
+EWT,iShares MSCI Taiwan ETF,$73.05,75,STRONG BUY,5,69.2,Bear,34.4,87.4,0.92x,+19.7%,20.8%,2.23,-8.1%,+8.6%,+19.4%,+26.5%,$7.68B,N/A,4.02%,N/A
+COPX,Global X Copper Miners ETF,$87.94,75,STRONG BUY,5,55.9,Bear,32.6,36.2,0.47x,+87.2%,39.0%,3.54,-13.7%,+7.2%,+45.8%,+90.9%,$7.26B,N/A,2.22%,N/A
+PICK,iShares MSCI Global Metals & M,$60.63,75,STRONG BUY,5,58.3,Bear,40.8,52.2,0.30x,+47.0%,24.8%,3.50,-7.3%,+6.2%,+33.0%,+53.1%,$1.79B,N/A,1.67%,N/A
+IAU,iShares Gold Trust,$94.75,75,STRONG BUY,5,56.1,Bear,33.8,46.0,0.40x,+44.3%,29.2%,2.89,-13.8%,+9.3%,+20.8%,+50.5%,$79.75B,N/A,N/A,N/A
+EWZS,iShares MSCI Brazil Small-Cap ,$15.04,75,STRONG BUY,5,57.4,Bear,29.2,38.6,0.80x,+16.0%,27.1%,1.55,-12.0%,+11.2%,+11.6%,+21.3%,$0.22B,N/A,3.38%,N/A
+ECH,iShares MSCI Chile ETF,$43.81,70,STRONG BUY,5,46.5,Bear,30.4,14.8,0.68x,+29.9%,22.5%,2.77,-7.5%,-0.8%,+19.8%,+35.7%,$1.32B,N/A,1.79%,N/A
+URA,Global X Uranium ETF,$51.91,70,STRONG BUY,5,48.5,Bear,26.4,21.3,0.53x,+33.0%,54.3%,1.46,-28.4%,-1.6%,+20.0%,+39.4%,$7.73B,N/A,3.73%,N/A
+ENZL,iShares MSCI New Zealand ETF,$46.77,65,BUY,4,49.2,Bear,22.9,25.8,3.65x,-2.4%,11.8%,0.54,-7.5%,+2.5%,+5.4%,+3.7%,$0.07B,N/A,2.15%,N/A
+EWL,iShares MSCI Switzerland ETF,$63.79,65,BUY,4,67.5,Bear,23.2,96.1,0.71x,+11.6%,12.7%,2.50,-4.7%,+5.4%,+10.3%,+17.0%,$1.66B,N/A,1.66%,N/A
+EWQ,iShares MSCI France ETF,$46.70,65,BUY,4,59.8,Bear,17.0,73.2,0.92x,+1.6%,13.1%,1.07,-5.2%,+2.9%,+4.2%,+6.9%,$0.39B,N/A,2.60%,N/A
+COLO,Global X MSCI Colombia ETF,$41.12,65,BUY,4,53.7,Bear,28.9,34.7,1.09x,+32.4%,20.1%,3.25,-8.6%,+4.4%,+16.1%,+37.7%,$0.15B,N/A,6.36%,N/A
+EWJ,iShares MSCI Japan ETF,$93.85,65,BUY,4,76.9,Bear,33.3,95.5,1.05x,+17.2%,16.9%,2.47,-5.9%,+9.9%,+17.3%,+21.5%,$16.69B,N/A,4.27%,N/A
+EWN,iShares MSCI Netherlands ETF,$61.65,65,BUY,4,51.6,Bear,21.0,34.4,0.80x,+13.8%,17.1%,2.11,-7.0%,+0.1%,+9.2%,+20.4%,$0.36B,N/A,4.60%,N/A
+EWP,iShares MSCI Spain ETF,$55.61,65,BUY,4,50.0,Bear,23.1,17.5,1.76x,+10.1%,14.6%,2.03,-6.0%,+2.5%,+8.0%,+15.4%,$1.88B,N/A,2.17%,N/A
+EPHE,iShares MSCI Philippines ETF,$26.97,60,BUY,4,61.0,Bear,27.4,82.2,0.83x,-2.9%,17.6%,0.36,-13.1%,+2.2%,+14.8%,+3.0%,$0.16B,N/A,2.01%,N/A
+VNM,VanEck Vietnam ETF,$18.89,60,BUY,4,52.7,Bear,15.7,82.9,0.78x,+0.3%,27.1%,0.53,-15.1%,-3.3%,+8.7%,+6.9%,$0.65B,N/A,0.20%,N/A
+EZU,iShares MSCI Eurozone ETF,$67.37,55,WEAK BUY,3,56.0,Bear,23.2,53.5,0.98x,+5.7%,12.3%,1.75,-5.8%,+2.2%,+7.4%,+11.4%,$9.56B,N/A,2.75%,N/A
+TUR,iShares MSCI Turkey ETF,$42.22,55,WEAK BUY,3,73.0,Bear,44.7,95.7,1.16x,+18.7%,20.5%,2.18,-11.3%,+11.3%,+30.1%,+24.6%,$0.35B,N/A,1.99%,N/A
+ARGT,Global X MSCI Argentina ETF,$92.39,55,WEAK BUY,3,44.5,Bear,14.7,11.3,0.56x,+4.6%,44.4%,0.64,-20.5%,+1.0%,+3.3%,+10.6%,$0.88B,N/A,0.78%,N/A
+EWI,iShares MSCI Italy ETF,$55.54,50,HOLD,0,48.3,Bear,22.4,15.5,0.61x,+2.8%,14.1%,1.17,-6.1%,+1.4%,+4.2%,+8.6%,$0.72B,N/A,2.72%,N/A
+EWS,iShares MSCI Singapore ETF,$28.47,45,WEAK SELL,-3,52.9,Bear,13.9,50.4,0.85x,-1.1%,13.4%,0.67,-7.3%,+1.5%,+3.1%,+5.2%,$0.77B,N/A,3.99%,N/A
+EWG,iShares MSCI Germany ETF,$43.97,45,WEAK SELL,-3,57.2,Bear,14.0,66.8,0.41x,-2.9%,12.7%,0.44,-8.8%,+1.7%,+6.6%,+3.3%,$1.76B,N/A,1.58%,N/A
+ERUS,iShares MSCI Russia ETF,$0.03,45,WEAK SELL,-3,0.0,Bear,85.4,100.0,1.00x,-106.2%,141.4%,-1.43,-99.6%,+0.3%,-99.6%,-99.6%,$0.00B,N/A,595.28%,N/A
+EWS,iShares MSCI Singapore ETF,$28.47,45,WEAK SELL,-3,52.9,Bear,13.9,50.4,0.85x,-1.1%,13.4%,0.67,-7.3%,+1.5%,+3.1%,+5.2%,$0.77B,N/A,3.99%,N/A
+TQQQ,ProShares UltraPro QQQ,$48.47,35,SELL,-4,39.3,Bear,21.7,12.9,1.20x,-3.6%,47.5%,0.31,-23.0%,-10.9%,-7.2%,+4.2%,$28.96B,N/A,0.63%,N/A

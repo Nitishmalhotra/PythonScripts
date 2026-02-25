@@ -1,0 +1,43 @@
+Sum of Price,,,Date,,,
+Ticker,Name,Signal,09-02-2026,10-02-2026,Buy price,Qty
+ARGT,Global X MSCI Argentina ETF,WEAK BUY,93.74,95.3,,
+COLO,Global X MSCI Colombia ETF,STRONG BUY,41.55,41.81,,
+COPX,Global X Copper Miners ETF,STRONG BUY,88.51,89.03,81.26,3.84
+ECH,iShares MSCI Chile ETF,STRONG BUY,45.91,46.17,,
+EEM,iShares MSCI Emerging Markets ,BUY,60.54,60.51,,
+ENZL,iShares MSCI New Zealand ETF,BUY,,47.98,,
+,,HOLD,47.88,,,
+EPHE,iShares MSCI Philippines ETF,WEAK BUY,26.54,26.42,,
+ERUS,iShares MSCI Russia ETF,SELL,0.03,,,
+,,WEAK SELL,,0.03,,
+EWA,iShares MSCI Australia ETF,STRONG BUY,28.79,28.83,,
+EWC,iShares MSCI Canada ETF,BUY,55.83,56.27,,
+EWD,iShares MSCI Sweden ETF,BUY,,53.38,,
+,,STRONG BUY,53.29,,,
+EWG,iShares MSCI Germany ETF,SELL,44.23,44.32,,
+EWH,iShares MSCI Hong Kong ETF,STRONG BUY,23.7,23.74,,
+EWI,iShares MSCI Italy ETF,BUY,57.56,57.61,,
+EWJ,iShares MSCI Japan ETF,BUY,91.07,91.29,88.77,2.24
+EWK,iShares MSCI Belgium ETF,STRONG BUY,26.91,26.98,,
+EWL,iShares MSCI Switzerland ETF,STRONG BUY,63.53,63.45,,
+EWN,iShares MSCI Netherlands ETF,BUY,62.85,62.99,,
+EWP,iShares MSCI Spain ETF,STRONG BUY,57.29,57.51,,
+EWQ,iShares MSCI France ETF,BUY,46.83,46.99,,
+EWS,iShares MSCI Singapore ETF,BUY,,56.88,,
+,,WEAK BUY,56.96,,,
+EWT,iShares MSCI Taiwan ETF,BUY,70.79,70.76,,
+EWW,iShares MSCI Mexico ETF,STRONG BUY,80.61,80.67,,
+EWY,iShares MSCI South Korea ETF,WEAK BUY,125.97,126.05,115.18,2
+EWZ,iShares MSCI Brazil ETF,STRONG BUY,38.06,38.42,,
+EWZS,iShares MSCI Brazil Small-Cap ,STRONG BUY,15.14,15.27,,
+EZU,iShares MSCI Eurozone ETF,WEAK BUY,68.26,68.39,66.95,0.79
+GREK,Global X MSCI Greece ETF,BUY,74.76,,,
+,,STRONG BUY,,74.77,,
+IAU,iShares Gold Trust,STRONG BUY,95.38,95.63,,
+PICK,iShares MSCI Global Metals & M,STRONG BUY,60.73,61.02,,
+TQQQ,ProShares UltraPro QQQ,STRONG SELL,51.6,51.74,53.14,8.25
+TUR,iShares MSCI Turkey ETF,WEAK BUY,41.53,41.54,,
+URA,Global X Uranium ETF,STRONG BUY,54.13,54.9,56.54,4.4
+VNM,VanEck Vietnam ETF,SELL,18,,,
+,,WEAK SELL,,18.05,,
+Grand Total,,,1868.5,1874.7,,

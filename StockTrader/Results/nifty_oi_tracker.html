@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nifty 50 Weekly F&O OI Tracker - Multi-Strategy with P&L</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .metric-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .metric-label {
+            font-size: 0.9em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .sentiment-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .sentiment-bullish {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .sentiment-bearish {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .sentiment-neutral {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .strategies-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .strategies-section h2 {
+            color: #667eea;
+            margin-bottom: 25px;
+            font-size: 1.6em;
+        }
+        
+        .strategy-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .strategy-card:hover {
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        .strategy-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .strategy-condition {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        
+        .strategy-strikes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        
+        .strike-badge {
+            background: #f0f0f0;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        
+        .strike-label {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .strike-value {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .strategy-best-for {
+            font-size: 0.9em;
+            color: #28a745;
+            font-weight: 600;
+        }
+        
+        .pnl-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 0.85em;
+        }
+        
+        .pnl-table th {
+            background: #e8ebf0;
+            color: #333;
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .pnl-table td {
+            padding: 9px 10px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .pnl-positive {
+            background: #d4edda;
+            color: #155724;
+            font-weight: 600;
+        }
+        
+        .pnl-negative {
+            background: #f8d7da;
+            color: #721c24;
+            font-weight: 600;
+        }
+        
+        .pnl-neutral {
+            background: #fff3cd;
+            color: #856404;
+            font-weight: 600;
+        }
+        
+        .pcr-indicator {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ffc107;
+            border-left: 5px solid #ffc107;
+        }
+        
+        .pcr-indicator p {
+            margin: 8px 0;
+        }
+        
+        .oi-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        
+        .oi-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        
+        .oi-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .oi-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .atm-row {
+            background: #fff3cd !important;
+            font-weight: 600;
+        }
+        
+        .call-oi {
+            color: #dc3545;
+            font-weight: 600;
+        }
+        
+        .put-oi {
+            color: #28a745;
+            font-weight: 600;
+        }
+        
+        .legend {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .legend h3 {
+            color: #0c5460;
+            margin-bottom: 15px;
+        }
+        
+        .legend-item {
+            margin: 8px 0;
+            font-size: 0.9em;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Nifty 50 Weekly F&O OI Tracker</h1>
+            <p>Multi-Strategy Analysis Based on Open Interest</p>
+            <p>Expiry: Wednesday, February 18, 2026</p>
+            <p>Generated: February 11, 2026 at 03:20 AM</p>
+        </div>
+        
+        <div class="content">
+            <!-- Key Metrics -->
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <div class="metric-label">Current Nifty 50</div>
+                    <div class="metric-value">₹25935</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">ATM Strike</div>
+                    <div class="metric-value">₹25900</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">PCR Ratio</div>
+                    <div class="metric-value">1.00</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Market Sentiment</div>
+                    <div class="metric-value sentiment-badge sentiment-neutral_bearish">NEUTRAL BEARISH</div>
+                </div>
+            </div>
+            
+            <!-- OI Legend -->
+            <div class="legend">
+                <h3>📖 Open Interest (OI) Explanation</h3>
+                <div class="legend-item"><strong>Call OI:</strong> Total outstanding call option contracts at that strike (red)</div>
+                <div class="legend-item"><strong>Put OI:</strong> Total outstanding put option contracts at that strike (green)</div>
+                <div class="legend-item"><strong>High OI Strike:</strong> Acts as support/resistance level (institutional trading)</div>
+                <div class="legend-item"><strong>Low OI Strike:</strong> Good for wings/spreads (cheaper premiums, less liquid)</div>
+                <div class="legend-item"><strong>PCR Ratio:</strong> Put OI ÷ Call OI ratio (>1.3=Bullish, <0.7=Bearish)</div>
+            </div>
+            
+            <!-- PCR Indicator -->
+            <div class="pcr-indicator">
+                <p><strong>📊 Put-Call Ratio (PCR): 1.00</strong></p>
+                <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
+                    🟠 NEUTRAL-BEARISH: Moderate call bias, slight bearish tilt expected
+                </p>
+            </div>
+            
+            <!-- All Strategies Based on Market Condition -->
+            <div class="strategies-section">
+                <h2>💡 6 Strategies - Choose Based on Market Condition & View P&L Scenarios</h2>
+                
+                <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #ffc107;">
+                    <strong>Current Market:</strong> NEUTRAL BEARISH | PCR: 1.00 | Days to Expiry: 7
+                </div>
+
+                <div class="strategy-card" style="border-left: 5px solid #667eea;">
+                    <div class="strategy-title">🎯 Iron Butterfly</div>
+                    <div class="strategy-condition">Condition: Range-bound market, Low IV (<20%)</div>
+                    <div style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin: 10px 0; font-size: 0.9em;">
+                        Choose when: Market is RANGING, IV is LOW (<20%), ATM has high OI
+                    </div>
+                    <div class="strategy-strikes"><div class="strike-badge"><span class="strike-label">LONG CALL:</span> <span class="strike-value">₹26000</span></div><div class="strike-badge"><span class="strike-label">SHORT CALL:</span> <span class="strike-value">₹25900</span></div><div class="strike-badge"><span class="strike-label">LONG PUT:</span> <span class="strike-value">₹25800</span></div><div class="strike-badge"><span class="strike-label">SHORT PUT:</span> <span class="strike-value">₹25900</span></div>                    </div>
+                    <div class="strategy-best-for">✓ Best For: Neutral/Range-bound bias</div>
+                    
+                    <!-- P&L Scenarios Table -->
+                    <table class="pnl-table">
+                        <thead>
+                            <tr>
+                                <th>Nifty Price</th>
+                                <th>Move (pts)</th>
+                                <th>P&L (₹)</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>₹25600</strong></td>
+                                <td>-300</td>
+                                <td class="pnl-neutral">₹-17</td>
+                                <td class="pnl-neutral">= BREAK</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25700</strong></td>
+                                <td>-200</td>
+                                <td class="pnl-neutral">₹-7</td>
+                                <td class="pnl-neutral">= BREAK</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25800</strong></td>
+                                <td>-100</td>
+                                <td class="pnl-neutral">₹-1</td>
+                                <td class="pnl-neutral">= BREAK</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25900</strong></td>
+                                <td>+0</td>
+                                <td class="pnl-neutral">₹+1</td>
+                                <td class="pnl-neutral">= BREAK</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26000</strong></td>
+                                <td>+100</td>
+                                <td class="pnl-neutral">₹-3</td>
+                                <td class="pnl-neutral">= BREAK</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26100</strong></td>
+                                <td>+200</td>
+                                <td class="pnl-neutral">₹-11</td>
+                                <td class="pnl-neutral">= BREAK</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26200</strong></td>
+                                <td>+300</td>
+                                <td class="pnl-neutral">₹-23</td>
+                                <td class="pnl-neutral">= BREAK</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="strategy-card" style="border-left: 5px solid #28a745;">
+                    <div class="strategy-title">📈 Bull Call Spread</div>
+                    <div class="strategy-condition">Condition: Uptrend, Bullish OI (low put buying)</div>
+                    <div style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin: 10px 0; font-size: 0.9em;">
+                        Choose when: Market is BULLISH, Sell OTM calls, Buy ATM calls
+                    </div>
+                    <div class="strategy-strikes"><div class="strike-badge"><span class="strike-label">LONG CALL:</span> <span class="strike-value">₹25900</span></div><div class="strike-badge"><span class="strike-label">SHORT CALL:</span> <span class="strike-value">₹26000</span></div>                    </div>
+                    <div class="strategy-best-for">✓ Best For: Moderate bullish view, lower capital</div>
+                    
+                    <!-- P&L Scenarios Table -->
+                    <table class="pnl-table">
+                        <thead>
+                            <tr>
+                                <th>Nifty Price</th>
+                                <th>Move (pts)</th>
+                                <th>P&L (₹)</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>₹25600</strong></td>
+                                <td>-300</td>
+                                <td class="pnl-negative">₹-470</td>
+                                <td class="pnl-negative">✗ LOSS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25700</strong></td>
+                                <td>-200</td>
+                                <td class="pnl-negative">₹-339</td>
+                                <td class="pnl-negative">✗ LOSS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25800</strong></td>
+                                <td>-100</td>
+                                <td class="pnl-negative">₹-198</td>
+                                <td class="pnl-negative">✗ LOSS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25900</strong></td>
+                                <td>+0</td>
+                                <td class="pnl-neutral">₹-52</td>
+                                <td class="pnl-neutral">= BREAK</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26000</strong></td>
+                                <td>+100</td>
+                                <td class="pnl-neutral">₹+95</td>
+                                <td class="pnl-neutral">= BREAK</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26100</strong></td>
+                                <td>+200</td>
+                                <td class="pnl-positive">₹+238</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26200</strong></td>
+                                <td>+300</td>
+                                <td class="pnl-positive">₹+373</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="strategy-card" style="border-left: 5px solid #dc3545;">
+                    <div class="strategy-title">📉 Bear Call Spread</div>
+                    <div class="strategy-condition">Condition: Downtrend, Bearish OI (high call buying)</div>
+                    <div style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin: 10px 0; font-size: 0.9em;">
+                        Choose when: Market is BEARISH, Short ATM calls, Long higher calls
+                    </div>
+                    <div class="strategy-strikes"><div class="strike-badge"><span class="strike-label">LONG CALL:</span> <span class="strike-value">₹26000</span></div><div class="strike-badge"><span class="strike-label">SHORT CALL:</span> <span class="strike-value">₹25900</span></div>                    </div>
+                    <div class="strategy-best-for">✓ Best For: Moderate bearish view, defined loss</div>
+                    
+                    <!-- P&L Scenarios Table -->
+                    <table class="pnl-table">
+                        <thead>
+                            <tr>
+                                <th>Nifty Price</th>
+                                <th>Move (pts)</th>
+                                <th>P&L (₹)</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>₹25600</strong></td>
+                                <td>-300</td>
+                                <td class="pnl-positive">₹+470</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25700</strong></td>
+                                <td>-200</td>
+                                <td class="pnl-positive">₹+339</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25800</strong></td>
+                                <td>-100</td>
+                                <td class="pnl-positive">₹+198</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25900</strong></td>
+                                <td>+0</td>
+                                <td class="pnl-neutral">₹+52</td>
+                                <td class="pnl-neutral">= BREAK</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26000</strong></td>
+                                <td>+100</td>
+                                <td class="pnl-neutral">₹-95</td>
+                                <td class="pnl-neutral">= BREAK</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26100</strong></td>
+                                <td>+200</td>
+                                <td class="pnl-negative">₹-238</td>
+                                <td class="pnl-negative">✗ LOSS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26200</strong></td>
+                                <td>+300</td>
+                                <td class="pnl-negative">₹-373</td>
+                                <td class="pnl-negative">✗ LOSS</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="strategy-card" style="border-left: 5px solid #ffc107;">
+                    <div class="strategy-title">🚀 Long Call</div>
+                    <div class="strategy-condition">Condition: Strong uptrend, High call OI</div>
+                    <div style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin: 10px 0; font-size: 0.9em;">
+                        Choose when: Strong UPTREND expected, want unlimited profit
+                    </div>
+                    <div class="strategy-strikes"><div class="strike-badge"><span class="strike-label">LONG CALL:</span> <span class="strike-value">₹25900</span></div>                    </div>
+                    <div class="strategy-best-for">✓ Best For: Bullish high momentum, unlimited profit</div>
+                    
+                    <!-- P&L Scenarios Table -->
+                    <table class="pnl-table">
+                        <thead>
+                            <tr>
+                                <th>Nifty Price</th>
+                                <th>Move (pts)</th>
+                                <th>P&L (₹)</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>₹25600</strong></td>
+                                <td>-300</td>
+                                <td class="pnl-negative">₹-2,877</td>
+                                <td class="pnl-negative">✗ LOSS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25700</strong></td>
+                                <td>-200</td>
+                                <td class="pnl-negative">₹-2,188</td>
+                                <td class="pnl-negative">✗ LOSS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25800</strong></td>
+                                <td>-100</td>
+                                <td class="pnl-negative">₹-1,357</td>
+                                <td class="pnl-negative">✗ LOSS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25900</strong></td>
+                                <td>+0</td>
+                                <td class="pnl-negative">₹-379</td>
+                                <td class="pnl-negative">✗ LOSS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26000</strong></td>
+                                <td>+100</td>
+                                <td class="pnl-positive">₹+747</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26100</strong></td>
+                                <td>+200</td>
+                                <td class="pnl-positive">₹+2,015</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26200</strong></td>
+                                <td>+300</td>
+                                <td class="pnl-positive">₹+3,417</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="strategy-card" style="border-left: 5px solid #17a2b8;">
+                    <div class="strategy-title">🔻 Long Put</div>
+                    <div class="strategy-condition">Condition: Strong downtrend, High put OI</div>
+                    <div style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin: 10px 0; font-size: 0.9em;">
+                        Choose when: Strong DOWNTREND expected, want downside protection
+                    </div>
+                    <div class="strategy-strikes"><div class="strike-badge"><span class="strike-label">LONG PUT:</span> <span class="strike-value">₹25900</span></div>                    </div>
+                    <div class="strategy-best-for">✓ Best For: Bearish high momentum, downside protection</div>
+                    
+                    <!-- P&L Scenarios Table -->
+                    <table class="pnl-table">
+                        <thead>
+                            <tr>
+                                <th>Nifty Price</th>
+                                <th>Move (pts)</th>
+                                <th>P&L (₹)</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>₹25600</strong></td>
+                                <td>-300</td>
+                                <td class="pnl-positive">₹+3,826</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25700</strong></td>
+                                <td>-200</td>
+                                <td class="pnl-positive">₹+2,515</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25800</strong></td>
+                                <td>-100</td>
+                                <td class="pnl-positive">₹+1,346</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25900</strong></td>
+                                <td>+0</td>
+                                <td class="pnl-positive">₹+324</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26000</strong></td>
+                                <td>+100</td>
+                                <td class="pnl-negative">₹-550</td>
+                                <td class="pnl-negative">✗ LOSS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26100</strong></td>
+                                <td>+200</td>
+                                <td class="pnl-negative">₹-1,282</td>
+                                <td class="pnl-negative">✗ LOSS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26200</strong></td>
+                                <td>+300</td>
+                                <td class="pnl-negative">₹-1,880</td>
+                                <td class="pnl-negative">✗ LOSS</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="strategy-card" style="border-left: 5px solid #e83e8c;">
+                    <div class="strategy-title">⚡ Straddle</div>
+                    <div class="strategy-condition">Condition: High IV >20%, Expecting big move</div>
+                    <div style="background: #f0f0f0; padding: 10px; border-radius: 5px; margin: 10px 0; font-size: 0.9em;">
+                        Choose when: High volatility expected (earnings/events), price may move sharply
+                    </div>
+                    <div class="strategy-strikes"><div class="strike-badge"><span class="strike-label">LONG CALL:</span> <span class="strike-value">₹25900</span></div><div class="strike-badge"><span class="strike-label">LONG PUT:</span> <span class="strike-value">₹25900</span></div>                    </div>
+                    <div class="strategy-best-for">✓ Best For: Earnings/Events, expects sudden volatility</div>
+                    
+                    <!-- P&L Scenarios Table -->
+                    <table class="pnl-table">
+                        <thead>
+                            <tr>
+                                <th>Nifty Price</th>
+                                <th>Move (pts)</th>
+                                <th>P&L (₹)</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>₹25600</strong></td>
+                                <td>-300</td>
+                                <td class="pnl-positive">₹+949</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25700</strong></td>
+                                <td>-200</td>
+                                <td class="pnl-positive">₹+327</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25800</strong></td>
+                                <td>-100</td>
+                                <td class="pnl-neutral">₹-12</td>
+                                <td class="pnl-neutral">= BREAK</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹25900</strong></td>
+                                <td>+0</td>
+                                <td class="pnl-neutral">₹-55</td>
+                                <td class="pnl-neutral">= BREAK</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26000</strong></td>
+                                <td>+100</td>
+                                <td class="pnl-positive">₹+197</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26100</strong></td>
+                                <td>+200</td>
+                                <td class="pnl-positive">₹+734</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                            <tr>
+                                <td><strong>₹26200</strong></td>
+                                <td>+300</td>
+                                <td class="pnl-positive">₹+1,538</td>
+                                <td class="pnl-positive">✓ PROFIT</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- OI Distribution Table -->
+            <h2 style="color: #667eea; margin-top: 40px; margin-bottom: 20px;">📊 Open Interest Distribution Across All Strikes</h2>
+            <p style="background: #f0f0f0; padding: 15px; border-radius: 8px; margin-bottom: 15px; font-size: 0.9em;">
+                <strong>How to Read:</strong> 
+                <span style="color: #dc3545;">🔴 Call OI (Red)</span> = Number of call contracts | 
+                <span style="color: #28a745;">🟢 Put OI (Green)</span> = Number of put contracts | 
+                Higher OI = More institutional activity = Better support/resistance
+            </p>
+            <table class="oi-table">
+                <thead>
+                    <tr>
+                        <th>Strike (₹)</th>
+                        <th>Call OI 🔴</th>
+                        <th>Put OI 🟢</th>
+                        <th>Call Price (₹)</th>
+                        <th>Put Price (₹)</th>
+                        <th>Total OI</th>
+                        <th>Distance from ATM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr >
+                        <td><strong>₹25500</strong></td>
+                        <td class="call-oi">2400K</td>
+                        <td class="put-oi">5600K</td>
+                        <td>₹400.00</td>
+                        <td>₹0.10</td>
+                        <td><strong>8000K</strong></td>
+                        <td>-400</td>
+                    </tr>
+                    <tr >
+                        <td><strong>₹25600</strong></td>
+                        <td class="call-oi">2975K</td>
+                        <td class="put-oi">5525K</td>
+                        <td>₹300.00</td>
+                        <td>₹0.10</td>
+                        <td><strong>8500K</strong></td>
+                        <td>-300</td>
+                    </tr>
+                    <tr >
+                        <td><strong>₹25700</strong></td>
+                        <td class="call-oi">3600K</td>
+                        <td class="put-oi">5400K</td>
+                        <td>₹200.00</td>
+                        <td>₹0.10</td>
+                        <td><strong>9000K</strong></td>
+                        <td>-200</td>
+                    </tr>
+                    <tr >
+                        <td><strong>₹25800</strong></td>
+                        <td class="call-oi">4275K</td>
+                        <td class="put-oi">5225K</td>
+                        <td>₹100.00</td>
+                        <td>₹0.10</td>
+                        <td><strong>9500K</strong></td>
+                        <td>-100</td>
+                    </tr>
+                    <tr class="atm-row">
+                        <td><strong>₹25900</strong></td>
+                        <td class="call-oi">5000K</td>
+                        <td class="put-oi">5000K</td>
+                        <td>₹0.10</td>
+                        <td>₹0.10</td>
+                        <td><strong>10000K</strong></td>
+                        <td>+0</td>
+                    </tr>
+                    <tr >
+                        <td><strong>₹26000</strong></td>
+                        <td class="call-oi">5225K</td>
+                        <td class="put-oi">4275K</td>
+                        <td>₹0.10</td>
+                        <td>₹100.00</td>
+                        <td><strong>9500K</strong></td>
+                        <td>+100</td>
+                    </tr>
+                    <tr >
+                        <td><strong>₹26100</strong></td>
+                        <td class="call-oi">5400K</td>
+                        <td class="put-oi">3600K</td>
+                        <td>₹0.10</td>
+                        <td>₹200.00</td>
+                        <td><strong>9000K</strong></td>
+                        <td>+200</td>
+                    </tr>
+                    <tr >
+                        <td><strong>₹26200</strong></td>
+                        <td class="call-oi">5525K</td>
+                        <td class="put-oi">2975K</td>
+                        <td>₹0.10</td>
+                        <td>₹300.00</td>
+                        <td><strong>8500K</strong></td>
+                        <td>+300</td>
+                    </tr>
+                    <tr >
+                        <td><strong>₹26300</strong></td>
+                        <td class="call-oi">5600K</td>
+                        <td class="put-oi">2400K</td>
+                        <td>₹0.10</td>
+                        <td>₹400.00</td>
+                        <td><strong>8000K</strong></td>
+                        <td>+400</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Important Notes -->
+            <div style="background: #fff3cd; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 4px solid #ffc107;">
+                <h3 style="color: #856404; margin-bottom: 10px;">⚠️ How to Use This Tracker</h3>
+                <ul style="margin-left: 20px; color: #333;">
+                    <li><strong>Step 1:</strong> Check PCR ratio to determine market sentiment (bullish/bearish/neutral)</li>
+                    <li><strong>Step 2:</strong> Look at OI distribution - high OI = support/resistance, low OI = potential breakout zones</li>
+                    <li><strong>Step 3:</strong> Choose strategy that matches current market condition (see strategy cards above)</li>
+                    <li><strong>Step 4:</strong> Use ATM or near-ATM strikes for short positions (high OI = stable)</li>
+                    <li><strong>Step 5:</strong> Use away-from-ATM strikes for long positions (low OI = cheaper premiums)</li>
+                    <li><strong>Best Entry Time:</strong> Tuesday-Wednesday after market opens (OI settles)</li>
+                    <li><strong>Exit Rule:</strong> Book profits at 30-40%, or exit by Day 5-6 before gamma explodes</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>✅ This tracker analyzes Open Interest (OI) data to recommend the best F&O strategy</p>
+            <p>🎯 Not restricted to Iron Butterfly - shows ALL strategies based on market conditions</p>
+            <p>⚠️ Disclaimer: This is for educational purposes. Always consult your advisor before trading.</p>
+            <p>Generated: {datetime.now().strftime('%B %d, %Y at %I:%M %p IST')}</p>
+        </div>
+    </div>
+</body>
+</html>

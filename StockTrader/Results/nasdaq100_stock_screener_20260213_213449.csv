@@ -1,0 +1,90 @@
+Ticker,Name,Sector,Price,EdgeScore,Score,Signal,Checklist,ChecksPassed,RSI,MACD,ADX,Stoch,Vol_Ratio,Rel_Str,Volatility,Sharpe,MaxDD,1M,3M,6M,MarketCap,PE,EPS,Dividend,Beta
+LRCX,Lam Research Corporation,Technology,$238.37,82.65,85,STRONG BUY,5/7,True,60.0,Bear,33.2,71.4,0.31x,+120.1%,52.4%,3.29,-16.1%,+9.6%,+55.7%,+140.4%,$299.39B,48.85,$4.88,0.42%,1.78
+FANG,"Diamondback Energy, Inc.",Energy,$168.35,68.81,80,STRONG BUY,6/7,True,62.4,Bear,32.1,87.4,0.17x,+18.0%,29.4%,1.42,-12.4%,+11.6%,+16.6%,+20.9%,$48.24B,11.81,$14.25,2.39%,0.58
+COST,Costco Wholesale Corporat,Consumer Defensive,$1018.99,66.16,80,STRONG BUY,7/7,True,68.5,Bull,32.8,99.2,0.36x,+0.4%,19.2%,0.43,-14.4%,+6.7%,+10.3%,+5.1%,$452.39B,54.55,$18.68,0.51%,1.01
+KEYS,"Keysight Technologies, In",Technology,$234.62,70.24,80,STRONG BUY,5/7,True,63.6,Bear,30.1,72.8,0.12x,+33.8%,30.9%,2.15,-10.5%,+9.4%,+31.5%,+43.6%,$40.31B,46.64,$5.03,N/A,1.20
+HOLX,"Hologic, Inc.",Healthcare,$75.08,57.51,75,STRONG BUY,4/7,True,56.1,Bull,15.2,68.0,0.21x,+4.8%,17.9%,0.91,-7.9%,+0.1%,+1.1%,+10.7%,$16.76B,31.16,$2.41,N/A,0.73
+MRNA,"Moderna, Inc.",Healthcare,$44.12,60.65,75,STRONG BUY,3/7,False,58.1,Bear,31.8,51.4,0.51x,+60.1%,70.0%,1.72,-22.7%,+12.1%,+76.8%,+57.5%,$17.23B,N/A,$-8.06,N/A,1.34
+MCHP,Microchip Technology Inco,Technology,$78.77,62.85,75,STRONG BUY,6/7,True,58.2,Bear,33.7,54.1,0.24x,+17.7%,43.8%,1.06,-29.1%,+5.8%,+45.0%,+21.8%,$42.63B,N/A,$-0.30,2.31%,1.44
+MU,"Micron Technology, Inc.",Technology,$407.25,85.12,75,STRONG BUY,6/7,True,58.2,Bear,37.5,47.3,0.36x,+224.0%,64.3%,3.97,-20.5%,+21.0%,+71.9%,+237.3%,$458.36B,38.75,$10.51,0.11%,1.50
+MNST,Monster Beverage Corporat,Consumer Defensive,$81.76,72.85,75,STRONG BUY,6/7,True,59.7,Bear,33.5,65.2,0.14x,+23.4%,20.5%,2.36,-5.6%,+4.9%,+15.0%,+26.5%,$79.88B,46.45,$1.76,N/A,0.45
+ON,ON Semiconductor Corporat,Technology,$70.93,71.97,75,STRONG BUY,7/7,True,70.0,Bear,28.7,83.2,0.18x,+32.7%,45.1%,1.55,-18.5%,+17.7%,+47.4%,+38.8%,$28.54B,244.60,$0.29,N/A,1.54
+PCAR,PACCAR Inc,Industrials,$126.50,67.11,75,STRONG BUY,5/7,True,60.2,Bear,40.0,67.2,0.18x,+24.4%,26.0%,1.96,-9.6%,+4.0%,+33.0%,+31.2%,$66.46B,28.05,$4.51,1.06%,1.04
+ROST,"Ross Stores, Inc.",Consumer Cyclical,$195.82,77.65,75,STRONG BUY,7/7,True,65.5,Bear,31.8,89.1,0.11x,+26.9%,20.9%,2.56,-5.4%,+1.0%,+21.3%,+33.9%,$63.69B,30.64,$6.39,0.81%,0.99
+VRTX,Vertex Pharmaceuticals In,Healthcare,$496.42,64.48,70,STRONG BUY,5/7,True,64.3,Bull,15.9,97.4,0.52x,+21.4%,26.4%,1.75,-9.3%,+13.1%,+14.2%,+26.4%,$127.28B,32.45,$15.30,N/A,0.32
+PSTG,"Pure Storage, Inc.",Technology,$73.18,49.65,70,STRONG BUY,4/7,True,52.5,Bear,10.2,71.5,0.20x,+18.9%,77.0%,0.89,-34.9%,+1.1%,-12.8%,+24.8%,$24.16B,192.58,$0.38,N/A,1.27
+ZM,"Zoom Communications, Inc.",Technology,$91.96,55.79,70,STRONG BUY,3/7,False,54.2,Bear,16.5,45.9,0.29x,+23.0%,38.9%,1.36,-10.3%,+12.8%,+9.4%,+25.7%,$27.52B,17.89,$5.14,N/A,0.90
+MAR,"Marriott International, I",Consumer Cyclical,$357.27,67.29,70,STRONG BUY,5/7,True,72.3,Bear,30.1,78.2,0.18x,+29.1%,27.1%,2.16,-7.4%,+9.7%,+24.6%,+35.4%,$94.67B,37.53,$9.52,0.74%,1.10
+TSM,Taiwan Semiconductor Manu,Technology,$367.06,70.55,70,STRONG BUY,5/7,True,66.2,Bear,22.0,78.8,0.32x,+48.9%,34.5%,2.56,-10.5%,+7.4%,+30.4%,+54.6%,$1903.76B,34.86,$10.53,N/A,1.27
+FTNT,"Fortinet, Inc.",Technology,$85.05,53.3,70,STRONG BUY,4/7,True,57.9,Bear,22.6,68.7,0.20x,+3.2%,29.7%,0.55,-13.9%,+11.4%,+5.0%,+7.5%,$65.17B,35.14,$2.42,N/A,1.05
+WERN,"Werner Enterprises, Inc.",Industrials,$33.43,44.67,70,STRONG BUY,2/7,False,47.9,Bear,30.6,32.0,0.12x,+13.7%,40.0%,0.96,-21.3%,-0.3%,+36.3%,+20.5%,$2.00B,N/A,$-0.24,1.72%,1.07
+CSCO,"Cisco Systems, Inc.",Technology,$75.85,43.95,70,STRONG BUY,2/7,False,42.6,Bear,36.3,16.4,0.43x,+5.0%,28.4%,0.68,-13.6%,+0.8%,-1.5%,+15.9%,$299.65B,27.28,$2.78,2.19%,0.86
+GOOG,Alphabet Inc.,Communication Servic,$306.48,58.21,70,STRONG BUY,2/7,False,32.6,Bear,28.5,5.6,0.23x,+47.2%,28.2%,2.98,-11.1%,-8.0%,+9.9%,+49.8%,$3707.49B,28.38,$10.80,0.27%,1.09
+ILMN,"Illumina, Inc.",Healthcare,$117.04,39.89,70,STRONG BUY,2/7,False,30.9,Bear,36.1,10.7,0.18x,+11.7%,53.1%,0.76,-25.7%,-19.5%,-2.4%,+16.9%,$17.99B,21.47,$5.45,N/A,1.45
+ODFL,Old Dominion Freight Line,Industrials,$192.45,55.87,65,BUY,4/7,True,59.1,Bear,38.7,58.0,0.15x,+21.9%,37.5%,1.35,-20.5%,+8.0%,+42.4%,+27.8%,$40.45B,39.76,$4.84,0.60%,1.27
+GILD,"Gilead Sciences, Inc.",Healthcare,$155.84,69.15,65,BUY,6/7,True,71.0,Bear,47.1,92.6,0.18x,+27.5%,26.1%,2.13,-7.0%,+28.5%,+25.3%,+33.4%,$193.39B,22.95,$6.79,2.08%,0.39
+HSAI,Hesai Group,Consumer Cyclical,$25.48,36.12,65,BUY,3/7,False,50.8,Bear,22.6,50.0,0.13x,+5.3%,74.0%,0.57,-49.6%,-11.0%,+28.8%,-0.4%,$4.09B,55.38,$0.46,N/A,1.15
+RULE,Adaptive Core ETF,N/A,$25.14,51.65,65,BUY,3/7,False,53.5,Bear,20.6,42.9,0.00x,+6.3%,17.9%,1.06,-8.0%,+2.1%,+11.1%,+11.5%,N/A,29.53,N/A,N/A,N/A
+REGN,Regeneron Pharmaceuticals,Healthcare,$801.17,68.15,60,BUY,6/7,True,61.2,Bear,13.3,97.3,0.22x,+39.1%,34.8%,2.16,-12.0%,+8.0%,+15.4%,+38.4%,$84.70B,19.32,$41.46,0.45%,0.41
+ZUMZ,Zumiez Inc.,Consumer Cyclical,$24.74,50.0,60,BUY,2/7,False,46.7,Bull,26.5,59.7,0.21x,+50.8%,47.0%,2.03,-21.6%,-4.3%,+9.0%,+59.7%,$0.42B,60.34,$0.41,N/A,0.89
+NVAX,"Novavax, Inc.",Healthcare,$8.89,43.28,60,BUY,4/7,True,55.0,Bear,26.9,44.5,0.20x,-3.6%,65.1%,0.30,-35.9%,+14.3%,+25.9%,-7.2%,$1.44B,4.42,$2.01,N/A,2.58
+KLAC,KLA Corporation,Technology,$1468.78,49.74,60,BUY,2/7,False,53.4,Bear,16.2,45.0,0.20x,+51.3%,49.1%,1.99,-22.4%,-4.9%,+26.6%,+68.5%,$192.99B,42.71,$34.39,0.51%,1.46
+MDLZ,"Mondelez International, I",Consumer Defensive,$61.85,58.1,60,BUY,7/7,True,73.5,Bear,30.0,87.3,0.18x,-2.8%,19.7%,0.11,-18.6%,+7.9%,+9.6%,+1.4%,$79.81B,32.72,$1.89,3.14%,0.40
+NXPI,NXP Semiconductors N.V.,Technology,$241.22,51.62,60,BUY,5/7,True,56.3,Bear,19.2,69.3,0.08x,+1.6%,37.5%,0.42,-22.6%,+1.1%,+20.4%,+6.4%,$60.82B,30.38,$7.94,1.67%,1.46
+CRWD,"CrowdStrike Holdings, Inc",Technology,$425.52,32.15,60,BUY,3/7,False,45.2,Bull,27.1,45.3,0.33x,-5.5%,39.5%,0.07,-32.4%,-6.5%,-19.7%,-0.6%,$107.27B,N/A,$-1.28,N/A,1.03
+GS,"The Goldman Sachs Group, ",Financial Services,$898.43,43.1,60,BUY,1/7,False,43.3,Bear,19.8,29.6,0.49x,+17.9%,26.5%,1.54,-8.8%,-7.9%,+12.1%,+24.2%,$271.97B,17.52,$51.29,1.55%,1.31
+DXCM,"DexCom, Inc.",Healthcare,$70.60,38.12,55,WEAK BUY,4/7,True,52.3,Bear,26.2,61.9,0.65x,-15.7%,42.6%,-0.41,-33.3%,+2.0%,+18.2%,-12.8%,$27.69B,33.79,$2.09,N/A,1.49
+TECH,Bio-Techne Corporation,Healthcare,$60.42,32.51,55,WEAK BUY,1/7,False,39.0,Bear,22.8,20.0,0.25x,+6.7%,39.0%,0.66,-16.6%,-13.6%,-0.4%,+13.0%,$9.45B,113.99,$0.53,0.54%,1.47
+ISRG,"Intuitive Surgical, Inc.",Healthcare,$491.40,36.57,55,WEAK BUY,3/7,False,38.0,Bull,35.7,37.1,0.18x,-2.1%,33.3%,0.21,-19.7%,-9.2%,-13.1%,+2.3%,$174.51B,62.60,$7.85,N/A,1.66
+FAST,Fastenal Company,Industrials,$45.81,45.0,55,WEAK BUY,5/7,True,56.4,Bear,25.5,53.8,0.18x,-9.9%,25.2%,-0.43,-21.9%,+5.8%,+13.0%,-5.3%,$52.60B,42.03,$1.09,1.92%,0.89
+WFG,West Fraser Timber Co. Lt,Basic Materials,$73.18,44.32,55,WEAK BUY,5/7,True,58.3,Bear,35.5,58.9,0.32x,-7.8%,32.0%,-0.14,-24.5%,+5.6%,+22.4%,-1.7%,$5.74B,N/A,$-12.08,1.74%,1.27
+CHTR,"Charter Communications, I",Communication Servic,$239.03,45.65,55,WEAK BUY,6/7,True,67.0,Bear,36.6,85.2,0.15x,-15.2%,34.7%,-0.56,-35.3%,+22.8%,+16.7%,-10.7%,$30.93B,6.60,$36.21,N/A,1.05
+AAPL,Apple Inc.,Technology,$259.36,32.3,50,HOLD,0/7,False,42.7,Bear,22.8,25.8,0.27x,+7.4%,21.8%,1.00,-13.8%,+0.5%,-4.9%,+12.2%,$3812.05B,32.83,$7.90,0.39%,1.11
+INTC,Intel Corporation,Technology,$47.22,57.56,50,HOLD,3/7,False,51.6,Bear,19.0,49.1,0.24x,+108.5%,71.8%,2.41,-21.8%,-2.3%,+31.5%,+92.3%,$235.92B,N/A,$-0.06,N/A,1.38
+STZ,"Constellation Brands, Inc",Consumer Defensive,$153.30,31.25,50,HOLD,3/7,False,45.0,Bear,40.4,8.4,0.68x,-12.7%,29.6%,-0.53,-24.1%,-2.8%,+19.0%,-7.6%,$26.69B,24.10,$6.36,2.51%,0.44
+NVDA,NVIDIA Corporation,Technology,$183.23,28.15,50,HOLD,1/7,False,47.7,Bear,11.6,52.0,0.28x,-3.1%,34.8%,0.17,-17.4%,-2.0%,-1.9%,+1.6%,$4461.10B,45.35,$4.04,0.02%,2.31
+TMDX,"TransMedics Group, Inc.",Healthcare,$130.74,34.23,50,HOLD,2/7,False,45.6,Bear,18.7,20.0,0.17x,-5.0%,49.1%,0.16,-19.8%,-9.0%,+13.1%,+2.5%,$4.47B,51.47,$2.54,N/A,1.98
+TSLA,"Tesla, Inc.",Consumer Cyclical,$415.46,40.08,50,HOLD,2/7,False,44.1,Bear,23.4,53.0,0.31x,+18.4%,44.5%,1.08,-18.9%,-5.3%,+3.4%,+25.7%,$1558.35B,384.53,$1.08,N/A,1.89
+MDB,"MongoDB, Inc.",Technology,$361.46,47.38,50,HOLD,2/7,False,44.7,Bear,26.4,39.6,0.20x,+70.2%,75.4%,1.77,-25.9%,-7.1%,+2.9%,+65.6%,$29.42B,N/A,$-0.82,N/A,1.39
+SBUX,Starbucks Corporation,Consumer Cyclical,$95.32,45.53,50,HOLD,4/7,True,53.1,Bear,40.4,33.1,0.17x,-1.4%,28.3%,0.25,-15.2%,+2.2%,+11.1%,+6.0%,$108.60B,79.43,$1.20,2.56%,0.94
+ORLY,"O'Reilly Automotive, Inc.",Consumer Cyclical,$96.93,38.18,45,WEAK SELL,5/7,True,54.2,Bear,24.0,53.7,0.20x,-9.6%,20.0%,-0.57,-16.2%,+3.5%,-1.4%,-4.5%,$81.82B,32.64,$2.97,N/A,0.62
+TTWO,Take-Two Interactive Soft,Communication Servic,$191.88,19.67,45,WEAK SELL,2/7,False,28.5,Bear,43.3,5.4,0.23x,-22.8%,30.2%,-1.28,-27.4%,-21.5%,-19.2%,-17.4%,$35.53B,N/A,$-22.58,N/A,0.93
+PYPL,"PayPal Holdings, Inc.",Financial Services,$39.56,10.84,45,WEAK SELL,2/7,False,19.2,Bear,51.6,6.1,0.24x,-47.9%,41.8%,-2.56,-48.5%,-30.3%,-39.3%,-42.7%,$37.02B,7.31,$5.41,0.72%,1.42
+MELI,"MercadoLibre, Inc.",Consumer Cyclical,$1974.84,19.1,45,WEAK SELL,1/7,False,39.2,Bear,19.3,14.4,0.20x,-19.2%,40.2%,-0.66,-24.3%,-5.9%,-2.8%,-17.5%,$100.12B,48.24,$40.94,N/A,1.45
+PAYX,"Paychex, Inc.",Technology,$93.58,10.42,45,WEAK SELL,2/7,False,26.5,Bear,45.6,14.7,0.28x,-35.1%,21.8%,-3.37,-33.0%,-14.4%,-15.4%,-30.9%,$33.59B,21.17,$4.42,4.56%,0.89
+NFLX,"Netflix, Inc.",Communication Servic,$76.36,14.42,45,WEAK SELL,3/7,False,25.5,Bear,30.9,10.1,0.27x,-40.6%,29.8%,-2.95,-39.9%,-13.3%,-33.8%,-38.4%,$323.93B,30.18,$2.53,N/A,1.71
+ZS,"Zscaler, Inc.",Technology,$175.44,12.13,45,WEAK SELL,2/7,False,31.2,Bear,41.9,19.0,0.31x,-40.9%,39.4%,-2.16,-50.2%,-16.7%,-43.1%,-36.2%,$27.98B,N/A,$-0.26,N/A,1.02
+TTD,"The Trade Desk, Inc.",Communication Servic,$26.03,8.69,45,WEAK SELL,2/7,False,25.5,Bear,43.5,4.9,0.29x,-56.1%,45.2%,-3.04,-53.0%,-28.2%,-39.3%,-50.1%,$12.73B,29.58,$0.88,N/A,1.09
+AVGO,Broadcom Inc.,Technology,$328.69,25.21,40,SELL,1/7,False,46.5,Bear,16.4,58.5,0.21x,+2.7%,47.9%,0.46,-25.3%,-4.2%,-3.1%,+7.7%,$1558.41B,68.91,$4.77,0.73%,1.22
+ZK,ZEEKR Intelligent Technol,Consumer Cyclical,$26.73,25.22,40,SELL,3/7,False,39.9,Bear,27.3,53.1,0.00x,-9.3%,28.1%,-0.94,-15.6%,-0.4%,-8.2%,+0.0%,$6.85B,N/A,$-1.28,N/A,N/A
+WKHS,"Workhorse Group, Inc.",Consumer Cyclical,$3.87,9.16,35,SELL,3/7,False,26.8,Bear,37.4,7.3,0.23x,-86.4%,98.0%,-3.06,-81.9%,-25.0%,-51.0%,-80.5%,$0.03B,0.05,$78.24,N/A,N/A
+WDAY,"Workday, Inc.",Technology,$145.81,10.68,35,SELL,2/7,False,24.9,Bear,52.7,9.9,0.24x,-38.6%,37.0%,-2.14,-41.8%,-24.3%,-34.8%,-35.5%,$38.93B,61.26,$2.38,N/A,1.12
+VRSK,"Verisk Analytics, Inc.",Industrials,$179.40,10.16,35,SELL,2/7,False,28.3,Bear,48.3,26.6,0.25x,-35.8%,29.8%,-2.46,-37.7%,-19.2%,-17.4%,-32.8%,$25.06B,27.60,$6.50,0.97%,0.80
+VRSN,"VeriSign, Inc.",Technology,$219.23,15.83,35,SELL,2/7,False,30.4,Bear,29.5,22.9,0.18x,-21.6%,23.5%,-1.59,-25.2%,-12.0%,-12.6%,-18.3%,$20.32B,24.88,$8.81,1.06%,0.75
+AMZN,"Amazon.com, Inc.",Consumer Cyclical,$198.46,16.39,35,SELL,1/7,False,22.9,Bear,26.5,2.3,0.39x,-15.6%,31.2%,-0.70,-21.9%,-16.7%,-16.5%,-14.1%,$2130.67B,27.68,$7.17,N/A,1.39
+INTU,Intuit Inc.,Technology,$398.79,5.64,35,SELL,2/7,False,19.2,Bear,57.3,5.5,0.29x,-47.8%,33.3%,-3.31,-44.3%,-28.1%,-38.5%,-44.2%,$111.02B,27.37,$14.57,1.09%,1.23
+UPLD,"Upland Software, Inc.",Technology,$0.99,7.93,35,SELL,1/7,False,18.6,Bear,39.3,1.2,0.49x,-51.9%,69.1%,-1.56,-66.7%,-35.2%,-47.3%,-46.4%,$0.03B,N/A,$-1.75,N/A,1.22
+PCRX,"Pacira BioSciences, Inc.",Healthcare,$22.25,33.2,35,SELL,5/7,True,54.3,Bear,24.3,100.0,0.10x,-15.2%,38.9%,-0.46,-29.6%,+7.7%,-5.8%,-10.2%,$0.96B,47.34,$0.47,N/A,0.23
+MSFT,Microsoft Corporation,Technology,$400.04,10.18,35,SELL,1/7,False,32.0,Bear,35.1,8.4,0.27x,-26.9%,24.8%,-2.03,-27.2%,-12.4%,-20.4%,-22.8%,$2973.21B,25.02,$15.99,0.87%,1.08
+SHAK,Shake Shack Inc.,Consumer Cyclical,$88.09,14.6,35,SELL,1/7,False,42.9,Bear,19.9,12.1,0.22x,-22.5%,39.7%,-0.88,-27.9%,-12.6%,-2.4%,-17.6%,$3.76B,86.36,$1.02,N/A,1.75
+TRIP,"Tripadvisor, Inc.",Consumer Cyclical,$9.86,5.65,35,SELL,1/7,False,19.0,Bear,30.5,3.0,0.79x,-49.7%,49.9%,-2.21,-48.5%,-29.5%,-33.3%,-44.0%,$1.15B,16.44,$0.60,N/A,N/A
+TCOM,Trip.com Group Limited,Consumer Cyclical,$54.18,22.8,35,SELL,3/7,False,27.3,Bear,35.1,8.1,0.38x,-16.4%,42.6%,-0.45,-31.4%,-11.6%,-27.3%,-13.1%,$35.41B,14.45,$3.75,N/A,-0.18
+TEAM,Atlassian Corporation,Technology,$86.62,7.7,35,SELL,2/7,False,20.7,Bear,42.9,6.0,0.30x,-51.2%,46.5%,-2.52,-52.6%,-32.6%,-43.0%,-48.1%,$22.85B,N/A,$-0.72,N/A,0.88
+DDOG,"Datadog, Inc.",Technology,$124.87,23.87,30,STRONG SELL,3/7,False,48.0,Bear,20.9,50.9,0.27x,-7.0%,58.9%,0.14,-46.6%,+3.3%,-32.9%,-1.9%,$43.79B,390.22,$0.32,N/A,1.29
+KDP,Keurig Dr Pepper Inc.,Consumer Defensive,$29.55,38.5,30,STRONG SELL,6/7,True,65.1,Bear,19.7,84.0,0.17x,-17.7%,31.4%,-0.83,-27.5%,+5.9%,+10.4%,-13.6%,$40.15B,25.47,$1.16,3.08%,0.35
+SWKS,"Skyworks Solutions, Inc.",Technology,$61.57,26.69,30,STRONG SELL,4/7,True,52.9,Bear,19.2,74.0,0.08x,-18.7%,38.2%,-0.68,-32.6%,+5.3%,-8.7%,-15.7%,$9.26B,23.58,$2.61,4.64%,1.32
+SNPS,"Synopsys, Inc.",Technology,$437.45,18.67,30,STRONG SELL,2/7,False,41.4,Bear,32.4,28.8,0.20x,-33.3%,68.5%,-0.63,-38.6%,-13.9%,+11.0%,-29.2%,$83.69B,54.07,$8.09,N/A,1.13
+IDXX,"IDEXX Laboratories, Inc.",Healthcare,$634.41,20.91,30,STRONG SELL,2/7,False,37.5,Bear,30.4,28.4,0.18x,-8.5%,32.6%,-0.18,-19.5%,-10.9%,-9.6%,-2.5%,$50.76B,48.50,$13.08,N/A,1.66
+QCOM,QUALCOMM Incorporated,Technology,$140.21,18.49,30,STRONG SELL,2/7,False,31.9,Bear,40.3,31.2,0.39x,-13.5%,34.8%,-0.45,-27.0%,-13.1%,-19.2%,-10.2%,$149.76B,28.27,$4.96,2.54%,1.24
+LULU,lululemon athletica inc.,Consumer Cyclical,$174.25,26.0,30,STRONG SELL,3/7,False,42.2,Bear,29.6,24.3,0.19x,-17.1%,47.0%,-0.39,-23.0%,-15.0%,+2.7%,-12.2%,$20.66B,12.12,$14.38,N/A,1.01
+META,"Meta Platforms, Inc.",Communication Servic,$647.66,20.41,30,STRONG SELL,1/7,False,44.8,Bear,19.2,12.0,0.23x,-20.9%,32.9%,-1.01,-24.9%,+4.3%,+6.3%,-17.4%,$1638.28B,27.61,$23.46,0.32%,1.28
+MSTR,Strategy Inc,Technology,$131.97,6.39,30,STRONG SELL,2/7,False,43.0,Bear,26.4,45.2,0.36x,-70.2%,75.9%,-2.48,-71.3%,-22.8%,-36.7%,-64.0%,$43.83B,N/A,$-15.23,N/A,3.54
+NTES,"NetEase, Inc.",Communication Servic,$120.03,14.78,30,STRONG SELL,1/7,False,33.7,Bear,23.8,17.5,0.25x,-14.3%,32.7%,-0.56,-25.5%,-11.8%,-15.0%,-6.3%,$77.20B,15.81,$7.59,3.52%,0.92
+PAYC,"Paycom Software, Inc.",Technology,$124.51,3.65,30,STRONG SELL,2/7,False,32.8,Bear,42.7,46.3,0.34x,-47.6%,34.0%,-3.22,-49.0%,-18.5%,-24.2%,-42.4%,$6.84B,15.41,$8.08,N/A,N/A
+SIRI,Sirius XM Holdings Inc.,Communication Servic,$21.36,40.0,30,STRONG SELL,5/7,True,54.7,Bear,17.3,49.1,0.14x,-6.3%,36.3%,-0.00,-17.4%,+3.5%,+0.2%,-4.9%,$7.19B,9.58,$2.23,4.98%,0.95
+JD,"JD.com, Inc.",Consumer Cyclical,$27.30,11.55,25,STRONG SELL,1/7,False,36.4,Bear,15.2,10.0,0.27x,-20.0%,30.7%,-1.04,-24.5%,-7.2%,-11.1%,-13.9%,$40.28B,8.86,$3.08,26.52%,0.41
+CDNS,"Cadence Design Systems, I",Technology,$295.98,18.79,25,STRONG SELL,3/7,False,47.2,Bear,19.6,53.2,0.32x,-19.2%,33.9%,-0.86,-28.1%,-7.7%,-6.3%,-15.4%,$80.65B,76.09,$3.89,N/A,1.00
+TMUS,"T-Mobile US, Inc.",Communication Servic,$216.94,39.12,25,STRONG SELL,7/7,True,72.2,Bear,26.3,89.6,0.34x,-16.8%,23.0%,-1.15,-28.5%,+13.8%,+1.6%,-14.1%,$242.65B,22.30,$9.73,N/A,N/A
+PDD,PDD Holdings Inc.,Consumer Cyclical,$100.24,15.18,25,STRONG SELL,2/7,False,34.2,Bear,19.5,17.9,0.34x,-18.1%,30.6%,-0.90,-27.4%,-6.7%,-25.5%,-15.7%,$142.31B,10.05,$9.97,N/A,-0.01
+TME,Tencent Music Entertainme,Communication Servic,$15.56,9.83,25,STRONG SELL,3/7,False,38.9,Bear,19.9,19.0,0.52x,-43.2%,37.8%,-2.47,-42.5%,-6.3%,-16.7%,-39.1%,$26.21B,15.56,$1.00,8.67%,0.52
+MTCH,"Match Group, Inc.",Communication Servic,$30.29,3.54,5,STRONG SELL,1/7,False,43.5,Bear,14.7,32.2,0.22x,-24.9%,28.7%,-1.55,-24.6%,-4.1%,-6.4%,-20.0%,$7.29B,12.73,$2.38,2.54%,1.31

@@ -1,0 +1,53 @@
+TOP RANKED ETFs:
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------      
+Ticker                           Name   Price  Score     Signal  RSI MACD Vol_Ratio Rel_Str     1M     3M     AUM Yield
+   EWW        iShares MSCI Mexico ETF  $79.92    100 STRONG BUY 65.1 Bear     2.28x  +25.2%  +8.9% +19.5%  $2.11B 3.21%
+   EWY   iShares MSCI South Korea ETF $130.80    100 STRONG BUY 73.1 Bull     1.40x  +72.7% +19.3% +39.4% $12.20B 1.64%
+   EWZ        iShares MSCI Brazil ETF  $38.49     95 STRONG BUY 65.9 Bear     0.99x  +35.1% +16.1% +19.9%  $8.75B 4.45%
+   EWD        iShares MSCI Sweden ETF  $53.42     95 STRONG BUY 57.9 Bear     1.37x  +11.3%  +5.6% +10.8%  $0.33B 3.08%
+   EWK       iShares MSCI Belgium ETF  $27.35     95 STRONG BUY 79.0 Bear     6.69x  +15.0%  +8.7% +13.2%  $0.03B 1.61%
+   EWA     iShares MSCI Australia ETF  $29.10     95 STRONG BUY 67.4 Bear     1.38x   +3.7%  +9.6% +11.4%  $1.28B 3.04%
+   EEM iShares MSCI Emerging Markets   $60.86     90 STRONG BUY 64.1 Bear     1.05x  +16.0%  +5.4% +11.1% $26.95B 2.05%
+   EWT        iShares MSCI Taiwan ETF  $72.56     85 STRONG BUY 67.8 Bear     1.15x  +18.1%  +9.1% +16.0%  $7.68B 4.02%
+   EWH     iShares MSCI Hong Kong ETF  $23.33     85 STRONG BUY 56.3 Bear     1.39x   +5.4%  +3.8%  +4.1%  $0.72B 4.71%
+  EWZS iShares MSCI Brazil Small-Cap   $15.16     85 STRONG BUY 59.6 Bear     1.20x  +16.3% +11.6%  +9.9%  $0.22B 3.38%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------      
+FULL ANALYSIS:
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------      
+Ticker                           Name   Price  Score     Signal  Strength  RSI MACD  ADX Stoch Vol_Ratio Rel_Str Volatility Sharpe  MaxDD     1M     3M     6M     AUM Expense   Yield Beta
+   EWW        iShares MSCI Mexico ETF  $79.92    100 STRONG BUY         5 65.1 Bear 43.3  74.7     2.28x  +25.2%      19.6%   2.79  -5.6%  +8.9% +19.5% +33.6%  $2.11B     N/A   3.21%  N/A
+   EWY   iShares MSCI South Korea ETF $130.80    100 STRONG BUY         5 73.1 Bull 49.2  79.5     1.40x  +72.7%      29.4%   4.04 -12.2% +19.3% +39.4% +81.6% $12.20B     N/A   1.64%  N/A
+   EWZ        iShares MSCI Brazil ETF  $38.49     95 STRONG BUY         5 65.9 Bear 41.6  68.5     0.99x  +35.1%      23.4%   3.00  -8.1% +16.1% +19.9% +42.8%  $8.75B     N/A   4.45%  N/A
+   EWD        iShares MSCI Sweden ETF  $53.42     95 STRONG BUY         5 57.9 Bear 31.1  54.9     1.37x  +11.3%      15.4%   2.04  -7.8%  +5.6% +10.8% +17.4%  $0.33B     N/A   3.08%  N/A
+   EWK       iShares MSCI Belgium ETF  $27.35     95 STRONG BUY         5 79.0 Bear 50.9  84.8     6.69x  +15.0%      11.5%   3.24  -4.2%  +8.7% +13.2% +20.5%  $0.03B     N/A   1.61%  N/A
+   EWA     iShares MSCI Australia ETF  $29.10     95 STRONG BUY         5 67.4 Bear 41.3  75.9     1.38x   +3.7%      14.5%   1.25  -9.5%  +9.6% +11.4% +10.7%  $1.28B     N/A   3.04%  N/A
+   EEM iShares MSCI Emerging Markets   $60.86     90 STRONG BUY         5 64.1 Bear 35.0  71.5     1.05x  +16.0%      15.2%   2.59  -5.2%  +5.4% +11.1% +23.8% $26.95B     N/A   2.05%  N/A
+   EWT        iShares MSCI Taiwan ETF  $72.56     85 STRONG BUY         5 67.8 Bear 33.7  80.0     1.15x  +18.1%      20.8%   2.10  -8.1%  +9.1% +16.0% +25.1%  $7.68B     N/A   4.02%  N/A
+   EWH     iShares MSCI Hong Kong ETF  $23.33     85 STRONG BUY         5 56.3 Bear 36.7  53.2     1.39x   +5.4%      16.2%   1.32  -6.5%  +3.8%  +4.1% +12.6%  $0.72B     N/A   4.71%  N/A
+  EWZS iShares MSCI Brazil Small-Cap   $15.16     85 STRONG BUY         5 59.6 Bear 30.6  54.1     1.20x  +16.3%      27.1%   1.56 -12.0% +11.6%  +9.9% +23.3%  $0.22B     N/A   3.38%  N/A
+   ECH         iShares MSCI Chile ETF  $44.25     80 STRONG BUY         5 48.6 Bear 31.2   4.5     1.78x  +30.2%      22.5%   2.79  -7.4%  -0.6% +19.2% +37.6%  $1.32B     N/A   1.79%  N/A
+  EPHE   iShares MSCI Philippines ETF  $26.94     80 STRONG BUY         5 60.6 Bear 27.3  80.5     1.37x   -4.6%      17.8%   0.16 -13.1%  +3.5% +15.1%  +3.3%  $0.16B     N/A   2.01%  N/A
+  GREK       Global X MSCI Greece ETF  $73.56     80 STRONG BUY         5 55.3 Bear 40.5  18.5     0.44x   +6.2%      17.7%   1.30  -7.1%  +6.4% +16.8% +12.9%  $0.34B     N/A   3.09%  N/A
+  COLO     Global X MSCI Colombia ETF  $40.13     80 STRONG BUY         5 47.8 Bear 30.5  10.0     0.52x  +28.5%      19.9%   3.00  -8.6%  +2.7% +11.1% +35.3%  $0.15B     N/A   6.36%  N/A
+   IAU             iShares Gold Trust  $92.48     75 STRONG BUY         5 52.5 Bear 35.1  33.3     0.88x  +39.9%      29.1%   2.69 -13.8%  +6.0% +17.0% +47.0% $79.75B     N/A     N/A  N/A
+  PICK iShares MSCI Global Metals & M  $60.68     75 STRONG BUY         5 58.5 Bear 42.1  52.9     0.51x  +44.7%      24.9%   3.35  -7.3%  +6.5% +31.3% +53.4%  $1.79B     N/A   1.67%  N/A
+   EWJ         iShares MSCI Japan ETF  $93.37     75 STRONG BUY         5 76.0 Bear 31.6  90.6     0.98x  +15.9%      16.9%   2.34  -5.9%  +9.8% +14.8% +22.9% $16.69B     N/A   4.27%  N/A
+   EWI         iShares MSCI Italy ETF  $56.52     75 STRONG BUY         5 55.6 Bear 23.8  51.0     0.50x   +5.8%      13.9%   1.56  -6.1%  +2.7%  +5.8% +11.1%  $0.72B     N/A   2.72%  N/A
+   EZU      iShares MSCI Eurozone ETF  $67.63     75 STRONG BUY         5 58.3 Bear 24.3  63.8     0.92x   +6.7%      12.2%   1.89  -5.8%  +2.3%  +7.1% +12.4%  $9.56B     N/A   2.75%  N/A
+  COPX     Global X Copper Miners ETF  $87.15     75 STRONG BUY         5 54.9 Bear 33.6  32.0     0.57x  +82.5%      39.1%   3.40 -13.7%  +5.8% +40.9% +91.8%  $7.26B     N/A   2.22%  N/A
+   URA           Global X Uranium ETF  $51.75     70 STRONG BUY         5 48.2 Bear 28.1  20.0     0.68x  +31.2%      54.3%   1.40 -28.4%  -1.6% +13.8% +38.9%  $7.73B     N/A   3.73%  N/A
+   EWL   iShares MSCI Switzerland ETF  $63.46     65        BUY         4 65.6 Bear 22.4  86.4     0.94x  +10.8%      12.7%   2.39  -4.7%  +4.3%  +9.3% +17.3%  $1.66B     N/A   1.66%  N/A
+   EWS     iShares MSCI Singapore ETF  $28.65     65        BUY         4 56.3 Bear 14.6  63.5     1.09x   -1.7%      13.5%   0.57  -7.3%  +1.9%  +2.3%  +5.9%  $0.77B     N/A   3.99%  N/A
+   EWN   iShares MSCI Netherlands ETF  $61.53     65        BUY         4 50.9 Bear 22.6  31.1     0.41x  +13.5%      17.1%   2.08  -7.0%  +1.4%  +8.2% +19.8%  $0.36B     N/A   4.60%  N/A
+   EWS     iShares MSCI Singapore ETF  $28.65     65        BUY         4 56.3 Bear 14.6  63.5     1.09x   -1.7%      13.5%   0.57  -7.3%  +1.9%  +2.3%  +5.9%  $0.77B     N/A   3.99%  N/A
+   EWC        iShares MSCI Canada ETF  $55.26     65        BUY         4 51.0 Bear 22.3  37.8     0.74x  +10.8%      14.4%   2.12  -4.2%  +0.1%  +7.7% +17.8%  $4.02B     N/A   1.44%  N/A
+   TUR        iShares MSCI Turkey ETF  $41.91     65        BUY         4 71.4 Bear 44.7  85.5     1.19x  +16.6%      20.6%   2.00 -11.3% +11.5% +28.2% +24.1%  $0.35B     N/A   1.99%  N/A
+   EWP         iShares MSCI Spain ETF  $56.16     65        BUY         4 53.5 Bear 24.4  39.8     0.58x  +12.5%      14.5%   2.30  -6.0%  +2.1%  +8.4% +17.6%  $1.88B     N/A   2.17%  N/A
+   EWQ        iShares MSCI France ETF  $46.68     60        BUY         4 59.6 Bear 16.9  72.2     1.08x   +2.1%      13.2%   1.13  -5.2%  +1.8%  +3.9%  +7.9%  $0.39B     N/A   2.60%  N/A
+  ENZL   iShares MSCI New Zealand ETF  $47.46     60        BUY         4 58.4 Bear 24.3  53.8     0.79x   -1.3%      11.7%   0.71  -7.5%  +3.4%  +5.3%  +5.5%  $0.07B     N/A   2.15%  N/A
+  ARGT    Global X MSCI Argentina ETF  $91.29     60        BUY         4 41.5 Bear 14.8   2.9     0.74x   +0.9%      44.5%   0.48 -20.5%  -1.1%  -0.5%  +9.6%  $0.88B     N/A   0.78%  N/A
+   EWG       iShares MSCI Germany ETF  $43.96     55   WEAK BUY         3 57.1 Bear 14.1  66.3     0.69x   -2.5%      12.7%   0.48  -8.8%  +1.1%  +5.5%  +3.4%  $1.76B     N/A   1.58%  N/A
+   VNM             VanEck Vietnam ETF  $18.51     50       HOLD         0 46.9 Bear 16.7  50.0     1.09x   -0.0%      27.1%   0.51 -15.1%  -6.0%  +5.8%  +4.4%  $0.65B     N/A   0.20%  N/A
+  ERUS        iShares MSCI Russia ETF   $0.03     45  WEAK SELL        -3  0.0 Bear 84.3 100.0     1.00x -105.8%     141.4%  -1.43 -99.6%  +0.3% -99.6% -99.6%  $0.00B     N/A 595.28%  N/A
+  TQQQ         ProShares UltraPro QQQ  $48.26     45  WEAK SELL        -3 38.6 Bear 20.5  11.0     1.28x   -4.2%      47.5%   0.28 -23.0% -10.3% -13.3%  +2.3% $28.96B     N/A   0.63%  N/A
