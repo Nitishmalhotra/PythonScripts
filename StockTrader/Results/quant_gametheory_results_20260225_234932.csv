@@ -1,0 +1,2 @@
+Rank,Ticker,Current Price (INR),52W High (INR),52W Low (INR),Drop from 52W High (%),EMA10,EMA20,EMA50,Sharpe Ratio,Sortino Ratio,Volatility (%),Max Drawdown (%),Nash Score,MC Profit Prob (%),MC Expected Return (%),MC VaR 95% (%),Kelly % (Position Size),Risk-Reward Ratio,Quant Score (0-100),Price vs EMA10
+1,SHRADHA,38.33,83.0,34.65,53.82,38.98,38.96,39.77,-0.8,-1.48,53.97,-54.93,93.55,36.2,-4.64,-31.13,0,12.14,16.09,Below

@@ -119,6 +119,7 @@ def screen_stock(ticker: str) -> dict | None:
 
         close = df["Close"].squeeze()
         high_52w = df["High"].squeeze().max()
+        low_52w = df["Low"].squeeze().min()
         current_price = close.iloc[-1]
 
         # Filter 1: >= 40% below 52-week high
@@ -134,8 +135,9 @@ def screen_stock(ticker: str) -> dict | None:
 
         return {
             "Ticker": ticker.replace(".NS", ""),
-            "Current Price (₹)": round(float(current_price), 2),
-            "52W High (₹)": round(float(high_52w), 2),
+            "Current Price (INR)": round(float(current_price), 2),
+            "52W High (INR)": round(float(high_52w), 2),
+            "52W Low (INR)": round(float(low_52w), 2),
             "Drop from 52W High (%)": round(float(drop_pct), 2),
             "EMA10": round(float(ema10_latest), 2),
             "Price vs EMA10": "Below" if current_price < ema10_latest else "Above",
@@ -171,9 +173,9 @@ def run_screener(max_stocks: int = None, delay: float = 0.3):
         result = screen_stock(ticker)
         if result:
             results.append(result)
-            print(f"  [MATCH] {result['Ticker']}  "
-                  f"Drop: {result['Drop from 52W High (%)']:.1f}%  "
-                  f"EMA10: {result['EMA10']:.2f}")
+            print(f"  [MATCH] {result['Ticker']:<12} | Current: {result['Current Price (INR)']:.2f} | "
+                  f"52W High: {result['52W High (INR)']:.2f} | 52W Low: {result['52W Low (INR)']:.2f} | "
+                  f"Drop: {result['Drop from 52W High (%)']:.1f}% | EMA10: {result['EMA10']:.2f}")
         time.sleep(delay)
 
     print(f"\n{'='*60}")
